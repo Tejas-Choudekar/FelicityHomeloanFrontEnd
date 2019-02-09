@@ -3,11 +3,9 @@
   <input ng-model="second" placeholder="Second number" type="text" />
   <h1> </h1>
 </div> -->
-<form #pform ="ngForm" (ngSubmit)="calculateEligibility(pform)">
+<form #pform ="ngForm">
   Monthly income <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome"/> <br/>
   <!-- Rate of interest<input [(ngModel)]="calculatorvalue.rateOfInterest"name="rateOfInterest"/><br/> -->
-  <h1>Monthly Income is:{{monthlyIncome}}</h1>
-  <input type="submit" value="calculate" (click) = calculateEligibility(pform) />
-  
+  <input type="submit" value="calculate" (click) = calculateEligibility() />
 </form>
-<h2>{{TotalEligibility}}</h2>
+<h2>{{calculatorvalue.TotalEligibility}}</h2>

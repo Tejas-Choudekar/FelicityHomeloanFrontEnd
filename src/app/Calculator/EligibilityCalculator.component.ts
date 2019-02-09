@@ -12,7 +12,6 @@ export class EligibilityCalculatorComponent implements OnInit{
   
 
 emi:number;
-TotalEligibility: number;
 loan: number;
 tenure: number;
 
@@ -29,15 +28,16 @@ calculatorvalue: CalculatorValue = new CalculatorValue();
 
   }
 
-calculateEligibility(pform):number
+calculateEligibility():number
 {
+    console.log("here"+this.calculatorvalue.monthlyIncome);
     //let url="http://localhost:4200/";
-    this.TotalEligibility = 60*(0.6 * pform.monthlyIncome);
+    this.calculatorvalue.TotalEligibility = 60*(0.6 * this.calculatorvalue.monthlyIncome);
     //this.newMethod().ecv.sendToServer(this.calculatorvalue);
     // this.ecv.recieveFromServer(url).subscribe(data=>{
     //     this.TotalEligibility=data;
     // });
-    return this.TotalEligibility;
+    return this.calculatorvalue.TotalEligibility;
 }
 
 
