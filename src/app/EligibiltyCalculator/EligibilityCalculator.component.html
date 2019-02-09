@@ -1,0 +1,35 @@
+<div class="panel">
+
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+      <form>
+        Enter amount=<input type="text"[(ngModel)]="amount"/>
+    </form>
+    <button (click)="calculateEMI()"type ="button" >Calculate EMI</button>
+    
+        
+         
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Monthly Income</td>        
+            </tr>
+            <tr>
+              <td>Rate of Interest</td>
+            </tr>
+            <tr>
+              <td>Eligibility</td>
+            </tr>
+          </thead>
+          <tbody>
+            <td *ngFor="let ec of ">
+              <tr><td>{{f.Flight_Number}}</td></tr>
+              <tr><td>{{f.Flight_Name}}</td></tr>
+            </td>
+            
+          </tbody>
+        </table>
+    
+    </div>
+    </div>
+    
