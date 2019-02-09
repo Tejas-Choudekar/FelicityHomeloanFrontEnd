@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
+import { EligibilityCalculatorComponent } from './Calculator/EligibilityCalculator.component';
+import { CalculatorService } from './Calculator/CalculatorService';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,EligibilityCalculatorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([
+      {path:'eligibility-component',component:EligibilityCalculatorComponent},
+     
+    ])
 
   ],
-  providers: [],
+  providers: [CalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
