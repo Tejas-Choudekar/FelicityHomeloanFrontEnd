@@ -11,10 +11,6 @@ export class EligibilityCalculatorComponent implements OnInit{
 
   
 
-emi:number;
-loan: number;
-tenure: number;
-
 calculatorvalue: CalculatorValue = new CalculatorValue();
 
     ngOnInit(): void {
@@ -30,22 +26,36 @@ calculatorvalue: CalculatorValue = new CalculatorValue();
 
 calculateEligibility():number
 {
-    console.log("here"+this.calculatorvalue.monthlyIncome);
-    //let url="http://localhost:4200/";
+    //console.log("here"+this.calculatorvalue.monthlyIncome);
+    
     this.calculatorvalue.TotalEligibility = 60*(0.6 * this.calculatorvalue.monthlyIncome);
-    //this.newMethod().ecv.sendToServer(this.calculatorvalue);
-    // this.ecv.recieveFromServer(url).subscribe(data=>{
-    //     this.TotalEligibility=data;
-    // });
+
+    //Loan amount = 60 * (0.6 * net monthly salary)
+    
     return this.calculatorvalue.TotalEligibility;
 }
 
 
-// calculateEMI(){
-//     this.newMethod();
-// }
+calculateEMI() : number{
 
-//     private newMethod() {
-//         this.emi = ((this.loan * 8.5 * (Math.pow(9.5, this.tenure)) / Math.pow(9.5, (this.tenure - 1))));
-//     }
+        // this.calculatorvalue.emi = (((this.calculatorvalue.loan * this.calculatorvalue.rateOfInterest) * 
+        //   (Math.pow((1+this.calculatorvalue.rateOfInterest), this.calculatorvalue.tenure)) / 
+        //   Math.pow((1+this.calculatorvalue.rateOfInterest), (this.calculatorvalue.tenure - 1))));
+
+        // this.calculatorvalue.emi = 
+        //   ((this.calculatorvalue.loan  *  this.calculatorvalue.rateOfInterest)  *  
+        //   (Math.pow((1  +  this.calculatorvalue.rateOfInterest) , this.calculatorvalue.tenure))) / 
+        //   (Math.pow((1  +  this.calculatorvalue.rateOfInterest) , this.calculatorvalue.tenure)  - 1)
+
+        this.calculatorvalue.newROI = (((this.calculatorvalue.rateOfInterest) / 12)/100);
+
+        this.calculatorvalue.emi = 
+               ((this.calculatorvalue.loan  *  this.calculatorvalue.newROI)  *  
+          (Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure))) / 
+          ((Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure)) - 1);
+          //EMI = P*R*{((1+R)^n)/((1+R)^n-1)}
+
+          return this.calculatorvalue.emi;
+
+    }
 }

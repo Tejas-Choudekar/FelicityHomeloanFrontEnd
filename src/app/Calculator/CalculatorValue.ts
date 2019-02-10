@@ -5,7 +5,8 @@ export class CalculatorValue{
         public TotalEligibility?:number,
         public tenure?: number,
         public emi?:number ,
-        public loan?:number
+        public loan?:number,
+        public newROI?: number
     ){
 
     }
