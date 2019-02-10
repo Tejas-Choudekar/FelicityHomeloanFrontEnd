@@ -38,14 +38,7 @@ calculateEligibility():number
 
 calculateEMI() : number{
 
-        // this.calculatorvalue.emi = (((this.calculatorvalue.loan * this.calculatorvalue.rateOfInterest) * 
-        //   (Math.pow((1+this.calculatorvalue.rateOfInterest), this.calculatorvalue.tenure)) / 
-        //   Math.pow((1+this.calculatorvalue.rateOfInterest), (this.calculatorvalue.tenure - 1))));
-
-        // this.calculatorvalue.emi = 
-        //   ((this.calculatorvalue.loan  *  this.calculatorvalue.rateOfInterest)  *  
-        //   (Math.pow((1  +  this.calculatorvalue.rateOfInterest) , this.calculatorvalue.tenure))) / 
-        //   (Math.pow((1  +  this.calculatorvalue.rateOfInterest) , this.calculatorvalue.tenure)  - 1)
+       
 
         this.calculatorvalue.newROI = (((this.calculatorvalue.rateOfInterest) / 12)/100);
 

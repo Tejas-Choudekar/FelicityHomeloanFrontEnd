@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
-  template: `
-    
-    <eligibility-calculator></eligibility-calculator>
-  `,
+  templateUrl: './app.component.html',
   styles: []
 })
 export class AppComponent {
