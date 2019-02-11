@@ -8,6 +8,7 @@ import { calculatorValue } from "./calculatorValue";
 })
 export class CalculatorComponent implements OnInit {
 
+  newEmi : number;
   calculatorvalue: calculatorValue = new calculatorValue();
 
   constructor() { }
@@ -28,17 +29,15 @@ export class CalculatorComponent implements OnInit {
 
 calculateEMI() : number{
 
-       
-
   this.calculatorvalue.newROI = (((this.calculatorvalue.rateOfInterest) / 12)/100);
 
   this.calculatorvalue.emi = 
-         ((this.calculatorvalue.loan  *  this.calculatorvalue.newROI)  *  
+  Math.trunc(((this.calculatorvalue.loan  *  this.calculatorvalue.newROI)  *  
     (Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure))) / 
-    ((Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure)) - 1);
+    ((Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure)) - 1));
     //EMI = P*R*{((1+R)^n)/((1+R)^n-1)}
-
-    return this.calculatorvalue.emi;
+    
+    return ;
 
 }
 

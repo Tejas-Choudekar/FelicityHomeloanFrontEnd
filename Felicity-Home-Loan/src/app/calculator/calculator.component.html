@@ -7,13 +7,13 @@
           <div class="form-group">
             <label for="monthlyIncome">Monthly income</label>
             <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome" type="number" class="form-control"
-              id="monthlyIncome" placeholder="eg : '45000'">
+              id="monthlyIncome" placeholder="eg : '45000'"><br />
             <input type="submit" value="calculate" (click)=calculateEligibility() />
           </div>
         </form>
         <div class="px-5 py-3">
           <h6>You are eligible for : </h6>
-          <h5>{{calculatorvalue.TotalEligibility}} loan</h5>
+          <h5>₹ {{calculatorvalue.TotalEligibility}} loan</h5>
         </div>
       </div>
     </div>
@@ -31,13 +31,13 @@
               placeholder="In months, eg : '24' ">
             <label for="rateOfInterest">Rate of Interest</label>
             <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="number" class="form-control"
-              id="rateOfInterest" placeholder="eg : '8.5'">
+              id="rateOfInterest" placeholder="eg : '8.5'"><br />
             <input type="submit" value="calculate" (click)=calculateEMI() />
           </div>
         </form>
         <div class="px-5 py-3">
           <h6>You will pay EMI : </h6>
-          <h5>{{calculatorvalue.emi}} per month</h5>
+          <h5>₹ {{calculatorvalue.emi}} per month</h5>
         </div>
       </div>
     </div>
