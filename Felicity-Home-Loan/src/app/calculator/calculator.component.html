@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="eligibility-calculator">
+        <form #pform="ngForm" class="px-5 py-3">
+          <h3>Loan Eligibility Calculator</h3>
+          <div class="form-group">
+            <label for="monthlyIncome">Monthly income</label>
+            <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome" type="number" class="form-control"
+              id="monthlyIncome" placeholder="eg : '45000'">
+            <input type="submit" value="calculate" (click)=calculateEligibility() />
+          </div>
+        </form>
+        <div class="px-5 py-3">
+          <h6>You are eligible for : </h6>
+          <h5>{{calculatorvalue.TotalEligibility}} loan</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="emi-calculator">
+        <form #eform="ngForm" class="px-5 py-3">
+          <h3>EMI Calculator</h3>
+          <div class="form-group">
+            <label for="loan">Loan</label>
+            <input [(ngModel)]="calculatorvalue.loan" name="loan" type="number" class="form-control" id="loan"
+              placeholder="eg : '200000'">
+            <label for="tenure">Tenure</label>
+            <input [(ngModel)]="calculatorvalue.tenure" name="tenure" type="number" class="form-control" id="tenure"
+              placeholder="In months, eg : '24' ">
+            <label for="rateOfInterest">Rate of Interest</label>
+            <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="number" class="form-control"
+              id="rateOfInterest" placeholder="eg : '8.5'">
+            <input type="submit" value="calculate" (click)=calculateEMI() />
+          </div>
+        </form>
+        <div class="px-5 py-3">
+          <h6>You will pay EMI : </h6>
+          <h5>{{calculatorvalue.emi}} per month</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
