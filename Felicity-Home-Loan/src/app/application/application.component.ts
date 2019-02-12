@@ -8,16 +8,20 @@ import { applicationValue } from './applicationValue';
 })
 export class ApplicationComponent implements OnInit {
 
-  responseProperty : String;
-  responseIncome : String;
-  responseLoan : String;
-  responsePersonal : String;
+  // responseProperty : String;
+  // responseIncome : String;
+  // responseLoan : String;
+  // responsePersonal : String;
+  confirmPassword: String;
+  che: Boolean;
+  array = { password: "", msg: "" };
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  applicationvalue : applicationValue =  new applicationValue();
+  applicationvalue: applicationValue = new applicationValue();
 
   PropertyDetailsForm(pdform) {
 
@@ -26,13 +30,22 @@ export class ApplicationComponent implements OnInit {
   IncomeDetailsForm(idform) {
 
   }
-  
+
   LoanDetailsForm(ldform) {
 
   }
 
   PersonalDetailsForm(pedform) {
-    
+
+    let confirm = true;
+
+    //verify the password
+    if (this.confirmPassword != this.applicationvalue.password) {
+      confirm = false;
+      this.array['password'] = "password does not match";
+    }
+
+
   }
 }
 
