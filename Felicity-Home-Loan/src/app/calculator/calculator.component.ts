@@ -8,7 +8,7 @@ import { calculatorValue } from "./calculatorValue";
 })
 export class CalculatorComponent implements OnInit {
 
-  newEmi : number;
+
   calculatorvalue: calculatorValue = new calculatorValue();
 
   constructor() { }
@@ -16,29 +16,28 @@ export class CalculatorComponent implements OnInit {
   ngOnInit() {
   }
 
-  calculateEligibility():number
-{
+  calculateEligibility(): number {
     //console.log("here"+this.calculatorvalue.monthlyIncome);
-    
-    this.calculatorvalue.TotalEligibility = 60*(0.6 * this.calculatorvalue.monthlyIncome);
+
+    this.calculatorvalue.TotalEligibility = 60 * (0.6 * this.calculatorvalue.monthlyIncome);
 
     //Loan amount = 60 * (0.6 * net monthly salary)
-    
+
     return this.calculatorvalue.TotalEligibility;
-}
+  }
 
-calculateEMI() : number{
+  calculateEMI(): number {
 
-  this.calculatorvalue.newROI = (((this.calculatorvalue.rateOfInterest) / 12)/100);
+    this.calculatorvalue.newROI = (((this.calculatorvalue.rateOfInterest) / 12) / 100);
 
-  this.calculatorvalue.emi = 
-  Math.trunc(((this.calculatorvalue.loan  *  this.calculatorvalue.newROI)  *  
-    (Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure))) / 
-    ((Math.pow((1  +  this.calculatorvalue.newROI) , this.calculatorvalue.tenure)) - 1));
+    this.calculatorvalue.emi =
+      Math.trunc(((this.calculatorvalue.loan * this.calculatorvalue.newROI) *
+        (Math.pow((1 + this.calculatorvalue.newROI), this.calculatorvalue.tenure))) /
+        ((Math.pow((1 + this.calculatorvalue.newROI), this.calculatorvalue.tenure)) - 1));
     //EMI = P*R*{((1+R)^n)/((1+R)^n-1)}
-    
-    return ;
 
-}
+    return;
+
+  }
 
 }
