@@ -1,0 +1,58 @@
+<form class="form">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+          <div class="form-group mb-2">
+            <label for="file">Upload PAN Card: </label>
+            <input type="file" class="form-control pad-3" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <button type="button" class="btn btn-primary mb-2" (click)="onUpload()">Upload</button>
+        </div>
+
+        <div>
+          <div class="form-group mb-2">
+            <label for="file">Upload Voter ID: </label>
+            <input type="file" class="form-control pad-3" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <button type="button" class="btn btn-primary mb-2" (click)="onUpload()">Upload</button>
+        </div>
+
+        <div>
+          <div class="form-group mb-2">
+            <label for="file">Upload Salary Slip: </label>
+            <input type="file" class="form-control pad-3" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <button type="button" class="btn btn-primary mb-2" (click)="onUpload()">Upload</button>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div>
+          <div class="form-group mb-2">
+            <label for="file">Upload Letter of Agreement: </label>
+            <input type="file" class="form-control pad-3" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <button type="button" class="btn btn-primary mb-2" (click)="onUpload()">Upload</button>
+        </div>
+
+        <div>
+          <div class="form-group mb-2">
+            <label for="file">Upload NOC from Builder: </label>
+            <input type="file" class="form-control pad-3" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <button type="button" class="btn btn-primary mb-2" (click)="onUpload()">Upload</button>
+        </div>
+
+        <div>
+          <div class="form-group mb-2">
+            <label for="file">Upload Agreement to Sale: </label>
+            <input type="file" class="form-control pad-3" accept="image/*" (change)="onFileSelected($event)">
+          </div>
+          <button type="button" class="btn btn-primary mb-2" (click)="onUpload()">Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

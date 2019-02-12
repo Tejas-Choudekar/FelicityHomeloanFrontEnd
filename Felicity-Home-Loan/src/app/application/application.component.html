@@ -1,129 +1,128 @@
 <div class="container">
-    <div class="row">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="property-details">
+        <form #pdform="ngForm" class="px-5 py-3">
+          <h2>Application Details</h2>
+          <h4>Property Details</h4>
+          <div class="form-group">
+            <label for="">Property Name</label>
+            <input [(ngModel)]="applicationvalue.propertyName" name="propertyName" type="text" class="form-control"
+              id="propertyName" placeholder="eg : 'E-305, Spring Valley Colony'">
+            <label for="">Property Location</label>
+            <input [(ngModel)]="applicationvalue.propertyLocation" name="propertyLocation" type="text"
+              class="form-control" id="propertyLocation" placeholder="eg : 'Andheri, Mumbai'">
+            <label for="">Estimated Amount</label>
+            <input [(ngModel)]="applicationvalue.estimatedAmount" name="estimatedAmount" type="number"
+              class="form-control" id="estimatedAmount" placeholder="eg : '3200000'"><br />
+
+            <input type="submit" value="Submit" (click)=PropertyDetailsForm() />
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="Income-details">
+        <form #idform="ngForm" class="px-5 py-3">
+          <h4>Income Details</h4>
+          <div class="form-group">
+            <label for="">Type Of Employee</label>
+            <input [(ngModel)]="applicationvalue.typeOfEmployee" name="typeOfEmployee" type="text" class="form-control"
+              id="typeOfEmployee" placeholder="eg : 'Service'">
+            <label for="">Retirement Age</label>
+            <input [(ngModel)]="applicationvalue.retirementAge" name="retirementAge" type="number" class="form-control"
+              id="retirementAge" placeholder="eg : '60'">
+            <label for="">Organization Type</label>
+            <input [(ngModel)]="applicationvalue.organisationType" name="organisationType" type="text"
+              class="form-control" id="organisationType" placeholder="eg : 'Private'">
+            <label for="">Employer Name</label>
+            <input [(ngModel)]="applicationvalue.employername" name="employername" type="text" class="form-control"
+              id="employername" placeholder="eg : 'LTI'">
+            <label for="">Salary</label>
+            <input [(ngModel)]="applicationvalue.salary" name="salary" type="number" class="form-control" id="salary"
+              placeholder="per months, eg : '45000'"><br />
+
+            <input type="submit" value="Submit" (click)=IncomeDetailsForm() />
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="application-details">
+        <form #ldform="ngForm" class="px-5 py-3">
+          <h4>Loan Details</h4>
+          <div class="form-group">
+            <label for="">Maximum Loan Grantable</label>
+
+            <label for="">Rate Of Interest</label>
+            <input [(ngModel)]="applicationvalue.rateOfInterest" name="rateOfInterest" type="number"
+              class="form-control" id="rateOfInterest" placeholder="eg : '8.5'">
+            <label for="">Tenure</label>
+            <input [(ngModel)]="applicationvalue.tenure" name="tenure" type="number" class="form-control" id="tenure"
+              placeholder="in months, eg : '35'">
+            <label for="">Loan Amount</label>
+            <input [(ngModel)]="applicationvalue.loanAmount" name="loanAmount" type="number" class="form-control"
+              id="loanAmount" placeholder="eg : '2300000'">
+
+            <input type="submit" value="Submit" (click)=LoanDetailsForm() />
+          </div>
+        </form>
+      </div>
+
+
+
+
       <div class="col-md-6">
-        <div class="property-details">
+        <div class="application-details">
           <form #pdform="ngForm" class="px-5 py-3">
-            <h2>Application Details</h2>
-            <h4>Property Details</h4>
+            <h4>Personal Details</h4>
             <div class="form-group">
-              <label for="">Property Name</label>
-              <input [(ngModel)]="applicationvalue.propertyName" name="propertyName" type="text" class="form-control"
-                id="propertyName" placeholder="eg : 'E-305, Spring Valley Colony'">
-                <label for="">Property Location</label>
-              <input [(ngModel)]="applicationvalue.propertyLocation" name="propertyLocation" type="text" class="form-control"
-                id="propertyLocation" placeholder="eg : 'Andheri, Mumbai'">
-                <label for="">Estimated Amount</label>
-              <input [(ngModel)]="applicationvalue.estimatedAmount" name="estimatedAmount" type="number" class="form-control"
-                id="estimatedAmount" placeholder="eg : '3200000'"><br />
+              <label for="">First Name</label>
+              <input [(ngModel)]="applicationvalue.firstName" name="firstName" type="text" class="form-control"
+                id="firstName" placeholder="eg : 'Tejas'"><br />
+              <label for="">Middle Name</label>
+              <input [(ngModel)]="applicationvalue.middleName" name="middleName" type="text" class="form-control"
+                id="middleName" placeholder="eg : 'Kumar'"><br />
+              <label for="">Last Name</label>
+              <input [(ngModel)]="applicationvalue.lastName" name="lastName" type="text" class="form-control"
+                id="lastName" placeholder="eg : 'Sharma'"><br />
+              <label for="">E-mail</label>
+              <input [(ngModel)]="applicationvalue.emailId" name="emailId" type="email" class="form-control"
+                id="emailId" placeholder="eg : 'tejas.sharma@gmail.com'"><br />
+              <label for="">Password</label>
+              <input [(ngModel)]="applicationvalue.password" name="password" type="password" class="form-control"
+                id="password" placeholder="eg : '********'"><br />
+              <label for="">Confirm Password</label>
+              <input [(ngModel)]="applicationvalue.confirmPassword" name="confirmPassword" type="password"
+                class="form-control" id="confirmPassword" placeholder="eg : '********'"><br />
+              <label for="">Phone Number</label>
+              <input [(ngModel)]="applicationvalue.phoneNumber" name="phoneNumber" type="number" class="form-control"
+                id="phoneNumber" placeholder="eg : '9845632172'"><br />
+              <label for="">Date of Birth</label>
+              <input [(ngModel)]="applicationvalue.birthDate" name="birthDate" type="date" class="form-control"
+                id="birthDate" placeholder="eg : '30/05/1995'"><br />
+              <label for="">Gender</label>
+              <input [(ngModel)]="applicationvalue.gender" name="gender" type="text" class="form-control" id="gender"
+                placeholder="eg : 'Male'"><br />
+              <label for="">Nationality</label>
+              <input [(ngModel)]="applicationvalue.nationality" name="nationality" type="text" class="form-control"
+                id="nationality" placeholder="eg : 'Indian'"><br />
+              <label for="">Aadhar Number</label>
+              <input [(ngModel)]="applicationvalue.aadharNumber" name="aadharNumber" type="number" class="form-control"
+                id="aadharNumber" placeholder="eg : '754123698541'"><br />
+              <label for="">PAN Number</label>
+              <input [(ngModel)]="applicationvalue.panNumber" name="panNumber" type="text" class="form-control"
+                id="panNumber" placeholder="eg : 'FGRH785L'"><br />
+
 
               <input type="submit" value="Submit" (click)=PropertyDetailsForm() />
             </div>
           </form>
-          </div>
+        </div>
       </div>
-  
-
-            <div class="col-md-6">
-              <div class="Income-details">
-                <form #idform="ngForm" class="px-5 py-3">
-                    <h4>Income Details</h4>
-                  <div class="form-group">
-                    <label for="">Type Of Employee</label>
-                    <input [(ngModel)]="applicationvalue.typeOfEmployee" name="typeOfEmployee" type="text" class="form-control"
-                      id="typeOfEmployee" placeholder="eg : 'Service'">
-                      <label for="">Retirement Age</label>
-                    <input [(ngModel)]="applicationvalue.retirementAge" name="retirementAge" type="number" class="form-control"
-                      id="retirementAge" placeholder="eg : '60'">
-                      <label for="">Organization Type</label>
-                    <input [(ngModel)]="applicationvalue.organisationType" name="organisationType" type="text" class="form-control"
-                      id="organisationType" placeholder="eg : 'Private'">
-                      <label for="">Employer Name</label>
-                    <input [(ngModel)]="applicationvalue.employername" name="employername" type="text" class="form-control"
-                        id="employername" placeholder="eg : 'LTI'"> 
-                        <label for="">Salary</label>
-                    <input [(ngModel)]="applicationvalue.salary" name="salary" type="number" class="form-control"
-                            id="salary" placeholder="per months, eg : '45000'"><br />
-                    
-                        <input type="submit" value="Submit" (click)=IncomeDetailsForm() />
-                  </div>
-                </form>
-            </div>
-       </div>
-     
-    
-            <div class="col-md-6">
-              <div class="application-details">
-                <form #ldform="ngForm" class="px-5 py-3">
-                    <h4>Loan Details</h4>
-                    <div class="form-group">
-                    <label for="">Maximum Loan Grantable</label>
-                    
-                      <label for="">Rate Of Interest</label>
-                    <input [(ngModel)]="applicationvalue.rateOfInterest" name="rateOfInterest" type="number" class="form-control"
-                      id="rateOfInterest" placeholder="eg : '8.5'">
-                      <label for="">Tenure</label>
-                    <input [(ngModel)]="applicationvalue.tenure" name="tenure" type="number" class="form-control"
-                      id="tenure" placeholder="in months, eg : '35'">
-                      <label for="">Loan Amount</label>
-                    <input [(ngModel)]="applicationvalue.loanAmount" name="loanAmount" type="number" class="form-control"
-                        id="loanAmount" placeholder="eg : '2300000'"> 
-                        
-                    <input type="submit" value="Submit" (click)=LoanDetailsForm() />
-                  </div>
-                </form>
-                </div>
-            
-
-
-					 
-						<div class="col-md-6">
-                    <div class="application-details">
-                      <form #pdform="ngForm" class="px-5 py-3">
-                      <h4>Personal Details</h4>
-                        <div class="form-group">
-                          <label for="">First Name</label>
-                          <input [(ngModel)]="applicationvalue.firstName" name="firstName" type="text" class="form-control"
-                            id="firstName" placeholder="eg : 'Tejas'"><br />
-                            <label for="">Middle Name</label>
-                          <input [(ngModel)]="applicationvalue.middleName" name="middleName" type="text" class="form-control"
-                            id="middleName" placeholder="eg : 'Kumar'"><br />
-                            <label for="">Last Name</label>
-                          <input [(ngModel)]="applicationvalue.lastName" name="lastName" type="text" class="form-control"
-														id="lastName" placeholder="eg : 'Sharma'"><br />
-														<label for="">E-mail</label>
-													<input [(ngModel)]="applicationvalue.emailId" name="emailId" type="email" class="form-control"
-														id="emailId" placeholder="eg : 'tejas.sharma@gmail.com'"><br />
-														<label for="">Password</label>
-													<input [(ngModel)]="applicationvalue.password" name="password" type="password" class="form-control"
-														id="password" placeholder="eg : '********'"><br />
-														<label for="">Confirm Password</label>
-													<input [(ngModel)]="applicationvalue.confirmPassword" name="confirmPassword" type="password" class="form-control"
-														id="confirmPassword" placeholder="eg : '********'"><br />
-														<label for="">Phone Number</label>
-													<input [(ngModel)]="applicationvalue.phoneNumber" name="phoneNumber" type="number" class="form-control"
-														id="phoneNumber" placeholder="eg : '9845632172'"><br />
-														<label for="">Date of Birth</label>
-													<input [(ngModel)]="applicationvalue.birthDate" name="birthDate" type="date" class="form-control"
-														id="birthDate" placeholder="eg : '30/05/1995'"><br />
-														<label for="">Gender</label>
-													<input [(ngModel)]="applicationvalue.gender" name="gender" type="text" class="form-control"
-														id="gender" placeholder="eg : 'Male'"><br />
-														<label for="">Nationality</label>
-													<input [(ngModel)]="applicationvalue.nationality" name="nationality" type="text" class="form-control"
-														id="nationality" placeholder="eg : 'Indian'"><br />
-														<label for="">Aadhar Number</label>
-													<input [(ngModel)]="applicationvalue.aadharNumber" name="aadharNumber" type="number" class="form-control"
-														id="aadharNumber" placeholder="eg : '754123698541'"><br />
-														<label for="">PAN Number</label>
-													<input [(ngModel)]="applicationvalue.panNumber" name="panNumber" type="text" class="form-control"
-														id="panNumber" placeholder="eg : 'FGRH785L'"><br />
-														
-														
-                          <input type="submit" value="Submit" (click)=PropertyDetailsForm() />
-                        </div>
-                      </form>
-                      </div>
-									</div>
-			</div>
-		</div>
-		
+    </div>
+  </div>
