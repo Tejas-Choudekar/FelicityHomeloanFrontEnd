@@ -1,4 +1,4 @@
-export class calculatorValue {
+export class CalculatorValue {
   constructor(
     public monthlyIncome?: number,
     public rateOfInterest?: number,

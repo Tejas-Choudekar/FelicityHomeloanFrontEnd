@@ -1,33 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { propertyDetailValue } from './propertyDetailValue';
-import { incomeDetailValue } from './incomeDetailValue';
-import { loanDetailValue } from './loanDetailValue';
-import { personalDetailValue } from './personalDetailValue';
+import { PropertyDetailValue } from './propertyDetailValue';
+import { IncomeDetailValue } from './incomeDetailValue';
+import { LoanDetailValue } from './loanDetailValue';
+import { PersonalDetailValue } from './personalDetailValue';
 
 @Component({
-  selector: 'app-application',
+  selector: 'homeLoan-application',
   templateUrl: './application.component.html',
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
 
-  // responseProperty : String;
-  // responseIncome : String;
-  // responseLoan : String;
-  // responsePersonal : String;
+
   confirmPassword: String;
   che: Boolean;
   array = { password: "", msg: "" };
 
-  constructor() { }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
+
+  constructor() {
+
+  }
+
 
   ngOnInit() {
   }
 
-  propertyValue: propertyDetailValue = new propertyDetailValue();
-  incomeValue: incomeDetailValue = new incomeDetailValue();
-  loanValue: loanDetailValue = new loanDetailValue();
-  personalValue: personalDetailValue = new personalDetailValue();
+  propertyValue: PropertyDetailValue = new PropertyDetailValue();
+  incomeValue: IncomeDetailValue = new IncomeDetailValue();
+  loanValue: LoanDetailValue = new LoanDetailValue();
+  personalValue: PersonalDetailValue = new PersonalDetailValue();
   //applicationvalue: applicationValue = new applicationValue();
 
   PropertyDetailForm() {
@@ -49,7 +57,7 @@ export class ApplicationComponent implements OnInit {
     //verify the password
     if (this.confirmPassword != this.personalValue.password) {
       confirm = false;
-      this.array['password'] = "password does not match";
+      this.array['password'] = "Pasword does not match";
     }
 
 

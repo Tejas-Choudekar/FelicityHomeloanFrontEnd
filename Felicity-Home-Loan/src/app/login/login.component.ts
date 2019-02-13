@@ -3,7 +3,7 @@ import { Login } from './login';
 import { LoginService } from './login-service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'homeLoan-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

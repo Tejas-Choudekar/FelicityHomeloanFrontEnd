@@ -1,4 +1,4 @@
-export class loanDetailValue {
+export class LoanDetailValue {
   constructor(
     public maxGrantableLoan?: number,
     public rateOfInterest?: number,

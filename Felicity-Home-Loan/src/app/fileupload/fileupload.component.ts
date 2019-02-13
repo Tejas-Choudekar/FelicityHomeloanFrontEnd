@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 
 @Component({
-  selector: 'app-fileupload',
+  selector: 'homeLoan-fileupload',
   templateUrl: './fileupload.component.html',
   styleUrls: ['./fileupload.component.css']
 })

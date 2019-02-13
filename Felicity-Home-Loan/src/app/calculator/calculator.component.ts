@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { calculatorValue } from "./calculatorValue";
+import { CalculatorValue } from "./calculatorValue";
 
 @Component({
-  selector: 'app-calculator',
+  selector: 'homeLoan-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
 
 
-  calculatorvalue: calculatorValue = new calculatorValue();
+  calculatorvalue: CalculatorValue = new CalculatorValue();
 
   constructor() { }
 

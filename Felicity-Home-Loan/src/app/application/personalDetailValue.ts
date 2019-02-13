@@ -1,4 +1,4 @@
-export class personalDetailValue {
+export class PersonalDetailValue {
   constructor(
     public firstName?: String,
     public middleName?: String,

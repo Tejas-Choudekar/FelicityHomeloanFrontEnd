@@ -2,14 +2,16 @@
   <div class="row">
     <div class="col-md-6">
       <div class="eligibility-calculator">
-        <form #pform="ngForm" class="px-5 py-3">
+        <form #pform="ngForm" ngNativeValidate class="px-5 py-3">
           <h3>Loan Eligibility Calculator</h3>
           <div class="form-group">
 
             <!--  MONTHLY INCOME -->
+
             <label for="monthlyIncome">Monthly income</label>
-            <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome" type="number" class="form-control"
-              id="monthlyIncome" placeholder="eg : '45000'"><br />
+            <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome" type="range" min="10000" max="2000000" step="1000" class="form-control-range" 
+              id="monthlyIncome" oninput="monthlyIncome_disp.value = monthlyIncome.value" placeholder="eg : '45000'" required><br />
+              <h6>Value: ₹ <output  id="monthlyIncome_disp"></output><br/><br/></h6>
 
 
             <input type="submit" value="calculate" (click)=calculateEligibility() />
@@ -17,7 +19,7 @@
         </form>
         <div class="px-5 py-3">
           <h6>You are eligible for : </h6>
-          <h5>₹ {{calculatorvalue.TotalEligibility}} loan</h5>
+          <h5>Loan : ₹ {{calculatorvalue.TotalEligibility}} </h5>
         </div>
       </div>
     </div>
@@ -25,31 +27,32 @@
 
     <div class="col-md-6">
       <div class="emi-calculator">
-        <form #eform="ngForm" class="px-5 py-3">
+        <form #eform="ngForm" ngNativeValidate class="px-5 py-3">
           <h3>EMI Calculator</h3>
           <div class="form-group">
 
             <!--  LOAN -->
             <label for="loan">Loan</label>
-            <input [(ngModel)]="calculatorvalue.loan" name="loan" type="number" class="form-control" id="loan"
-              placeholder="eg : '200000'">
+            <input [(ngModel)]="calculatorvalue.loan" name="loan" type="range" min="10000" max="200000000" step="10000" class="form-control-range" id="loan" oninput="loan_disp.value = loan.value" required><br />
+              <h6>Value: ₹ <output  id="loan_disp"></output><br/><br/></h6>
 
             <!--  TENURE -->
-            <label for="tenure">Tenure</label>
-            <input [(ngModel)]="calculatorvalue.tenure" name="tenure" type="number" class="form-control" id="tenure"
-              placeholder="In months, eg : '24' ">
+            <label for="tenure">Tenure (in months)</label>
+            <input [(ngModel)]="calculatorvalue.tenure" name="tenure" type="range" min="1" max="360"class="form-control-range" id="tenure" oninput="tenure_disp.value = tenure.value" required><br/>
+              <h6>Value (month):  <output  id="tenure_disp"></output><br/><br/></h6>
 
             <!--  RATE OF INTEREST -->
             <label for="rateOfInterest">Rate of Interest</label>
-            <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="number" class="form-control"
-              id="rateOfInterest" placeholder="eg : '8.5'"><br />
+            <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="range" min="1" max="15" class="form-control-range" 
+              id="rateOfInterest" oninput="rateOfInterest_disp.value = rateOfInterest.value" required><br />
+              <h6>Value (%):  <output  id="rateOfInterest_disp"></output><br/><br/></h6>
 
             <input type="submit" value="calculate" (click)=calculateEMI() />
           </div>
         </form>
         <div class="px-5 py-3">
           <h6>You will pay EMI : </h6>
-          <h5>₹ {{calculatorvalue.emi}} per month</h5>
+          <h5>Per month : ₹ {{calculatorvalue.emi}}</h5>
         </div>
       </div>
     </div>

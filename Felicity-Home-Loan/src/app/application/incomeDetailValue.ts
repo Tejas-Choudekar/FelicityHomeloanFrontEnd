@@ -1,4 +1,4 @@
-export class incomeDetailValue {
+export class IncomeDetailValue {
   constructor(
     public typeOfEmployee?: String,
     public retirementAge?: number,

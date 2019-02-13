@@ -27,11 +27,11 @@ import { HomePageComponent } from './home-page/home-page.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'app-calculator', component: CalculatorComponent },
-      { path: 'app-application', component: ApplicationComponent },
-      { path: 'app-fileupload', component: FileuploadComponent },
-      { path: 'app-login', component: LoginComponent },
-      { path: 'app-home-page', component: HomePageComponent }
+      { path: 'homeLoan-calculator', component: CalculatorComponent },
+      { path: 'homeLoan-application', component: ApplicationComponent },
+      { path: 'homeLoan-fileupload', component: FileuploadComponent },
+      { path: 'homeLoan-login', component: LoginComponent },
+      { path: 'homeLoan-home-page', component: HomePageComponent }
     ]),
     AppRoutingModule
   ],
@@ -39,5 +39,5 @@ import { HomePageComponent } from './home-page/home-page.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  title = 'felicityHomeLoan';
+  
 }

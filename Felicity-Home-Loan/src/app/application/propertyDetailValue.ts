@@ -1,4 +1,4 @@
-export class propertyDetailValue {
+export class PropertyDetailValue {
   constructor(
     public propertyName?: String,
     public propertyLocation?: String,
