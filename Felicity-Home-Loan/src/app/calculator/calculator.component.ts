@@ -19,7 +19,7 @@ export class CalculatorComponent implements OnInit {
   calculateEligibility(): number {
     //console.log("here"+this.calculatorvalue.monthlyIncome);
 
-    this.calculatorvalue.TotalEligibility = 60 * (0.6 * this.calculatorvalue.monthlyIncome);
+    this.calculatorvalue.TotalEligibility = Math.trunc(60 * (0.6 * this.calculatorvalue.monthlyIncome));
 
     //Loan amount = 60 * (0.6 * net monthly salary)
 

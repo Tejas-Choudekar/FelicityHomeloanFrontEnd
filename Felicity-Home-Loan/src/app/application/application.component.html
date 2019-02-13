@@ -11,12 +11,12 @@
 
         <!--  PROPERTY NAME -->
         <label for="">Property Name</label>
-        <input [(ngModel)]="applicationvalue.propertyName" name="propertyName" type="text" class="form-control"
+        <input [(ngModel)]="propertyValue.propertyName" name="propertyName" type="text" class="form-control"
           id="propertyName" placeholder="eg : 'E-305, Spring Valley Colony'" required>
 
         <!--  PROPERTY LOCATION -->
         <label for="">Property Location</label>
-        <input [(ngModel)]="applicationvalue.propertyLocation" name="propertyLocation" type="text" class="form-control"
+        <input [(ngModel)]="propertyValue.propertyLocation" name="propertyLocation" type="text" class="form-control"
           id="propertyLocation" placeholder="eg : 'Andheri, Mumbai'" required>
 
         <!--  ESTIMATED AMOUNT -->
@@ -25,11 +25,11 @@
           <div class="input-group-prepend">
             <div class="input-group-text">₹</div>
           </div>
-          <input [(ngModel)]="applicationvalue.estimatedAmount" name="estimatedAmount" type="number" min="1"
+          <input [(ngModel)]="propertyValue.estimatedAmount" name="estimatedAmount" type="number" min="1"
             class="form-control" id="estimatedAmount" placeholder="eg : '3200000'" required><br />
         </div>
 
-        <input type="submit" value="Submit" (click)=PropertyDetailsForm() />
+        <input type="submit" value="Submit" (click)=PropertyDetailForm() />
       </div>
     </form>
   </div>
@@ -46,20 +46,19 @@
 
         <!--  TYPE OF EMPLOYEE -->
         <label for="">Type Of Employee</label>
-        <select id="typeOfEmployee" input [(ngModel)]="applicationvalue.typeOfEmployee" class="form-control" required>
+        <select id="typeOfEmployee" input [(ngModel)]="incomeValue.typeOfEmployee" class="form-control" required>
           <option selected>Salaried</option>
           <option>Self-Employed</option>
         </select>
 
         <!--  RETIREMENT AGE -->
         <label for="">Retirement Age</label>
-        <input [(ngModel)]="applicationvalue.retirementAge" name="retirementAge" type="number" min="35" max="62"
+        <input [(ngModel)]="incomeValue.retirementAge" name="retirementAge" type="number" min="35" max="62"
           class="form-control" id="retirementAge" placeholder="eg : '60'" required>
 
         <!--  ORGANIZATION TYPE -->
         <label for="">Organization Type</label>
-        <select id="organisationType" input [(ngModel)]="applicationvalue.organisationType" class="form-control"
-          required>
+        <select id="organisationType" input [(ngModel)]="incomeValue.organisationType" class="form-control" required>
           <option selected>Cooperative</option>
           <option>NGO</option>
           <option>Government Organization</option>
@@ -72,7 +71,7 @@
 
         <!--  EMPLOYER NAME -->
         <label for="">Employer Name</label>
-        <input [(ngModel)]="applicationvalue.employername" name="employername" type="text" class="form-control"
+        <input [(ngModel)]="incomeValue.employername" name="employername" type="text" class="form-control"
           id="employername" placeholder="eg : 'LTI'" required>
 
         <!--  SALARY -->
@@ -81,11 +80,11 @@
           <div class="input-group-prepend">
             <div class="input-group-text">₹</div>
           </div>
-          <input [(ngModel)]="applicationvalue.salary" name="salary" type="number" min="1" class="form-control"
-            id="salary" placeholder="per months, eg : '45000'" required><br />
+          <input [(ngModel)]="incomeValue.salary" name="salary" type="number" min="1" class="form-control" id="salary"
+            placeholder="per months, eg : '45000'" required><br />
         </div>
 
-        <input type="submit" value="Submit" (click)=IncomeDetailsForm() />
+        <input type="submit" value="Submit" (click)=IncomeDetailForm() />
       </div>
     </form>
   </div>
@@ -106,19 +105,19 @@
           <div class="input-group-prepend">
             <div class="input-group-text">₹</div>
           </div>
-          <input [(ngModel)]="applicationvalue.maxGrantableLoan" name="maxGrantableLoan" min="1" type="number"
+          <input [(ngModel)]="loanValue.maxGrantableLoan" name="maxGrantableLoan" min="1" type="number"
             class="form-control" id="maxGrantableLoan" placeholder="eg : '5000000'" required>
         </div>
 
         <!--  RATE OF INTEREST -->
         <label for="">Rate Of Interest</label>
-        <input [(ngModel)]="applicationvalue.rateOfInterest" name="rateOfInterest" step="any" type="number" min="1"
-          max="100" class="form-control" id="rateOfInterest" placeholder="eg : '8.5'" required>
+        <input [(ngModel)]="loanValue.rateOfInterest" name="rateOfInterest" step="any" type="number" min="1" max="100"
+          class="form-control" id="rateOfInterest" placeholder="eg : '8.5'" required>
 
         <!--  TENURE -->
         <label for="">Tenure</label>
-        <input [(ngModel)]="applicationvalue.tenure" name="tenure" type="number" min="1" class="form-control"
-          id="tenure" placeholder="in months, eg : '35'" required>
+        <input [(ngModel)]="loanValue.tenure" name="tenure" type="number" min="1" class="form-control" id="tenure"
+          placeholder="in months, eg : '35'" required>
 
         <!--  LOAN AMOUNT -->
         <label for="">Loan Amount</label>
@@ -126,11 +125,11 @@
           <div class="input-group-prepend">
             <div class="input-group-text">₹</div>
           </div>
-          <input [(ngModel)]="applicationvalue.loanAmount" name="loanAmount" type="number" min="1" class="form-control"
+          <input [(ngModel)]="loanValue.loanAmount" name="loanAmount" type="number" min="1" class="form-control"
             id="loanAmount" placeholder="eg : '2300000'" required>
         </div><br />
 
-        <input type="submit" value="Submit" (click)=LoanDetailsForm() />
+        <input type="submit" value="Submit" (click)=LoanDetailForm() />
       </div>
     </form>
   </div>
@@ -149,48 +148,48 @@
 
         <!--  FIRST NAME -->
         <label for="">First Name</label>
-        <input [(ngModel)]="applicationvalue.firstName" name="firstName" type="text" class="form-control" id="firstName"
+        <input [(ngModel)]="personalValue.firstName" name="firstName" type="text" class="form-control" id="firstName"
           placeholder="eg : 'Tejas'" required><br />
 
         <!--  MIDDLE NAME -->
         <label for="">Middle Name</label>
-        <input [(ngModel)]="applicationvalue.middleName" name="middleName" type="text" class="form-control"
-          id="middleName" placeholder="eg : 'Kumar'"><br />
+        <input [(ngModel)]="personalValue.middleName" name="middleName" type="text" class="form-control" id="middleName"
+          placeholder="eg : 'Kumar'"><br />
 
         <!--  LAST NAME -->
         <label for="">Last Name</label>
-        <input [(ngModel)]="applicationvalue.lastName" name="lastName" type="text" class="form-control" id="lastName"
+        <input [(ngModel)]="personalValue.lastName" name="lastName" type="text" class="form-control" id="lastName"
           placeholder="eg : 'Sharma'" required><br />
 
         <!--  E-MAIL -->
         <label for="">E-mail</label>
-        <input [(ngModel)]="applicationvalue.emailId" name="emailId" type="email" class="form-control" id="emailId"
+        <input [(ngModel)]="personalValue.emailId" name="emailId" type="email" class="form-control" id="emailId"
           placeholder="eg : 'tejas.sharma@gmail.com'" required><br />
 
         <!--  PASSWORD -->
         <label for="">Password</label>
-        <input [(ngModel)]="applicationvalue.password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        <input [(ngModel)]="personalValue.password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           type="password" class="form-control" id="password" placeholder="eg : '********'" required><br />
 
         <!--  CONFIRM PASSWORD -->
         <label for="">Confirm Password</label>
-        <input [(ngModel)]="confirmPassword" name="confirmPassword" type="password"
-          class="form-control" id="confirmPassword" placeholder="eg : '********'" required><br />
+        <input [(ngModel)]="personalValue.confirmPassword" name="confirmPassword" type="password" class="form-control"
+          id="confirmPassword" placeholder="eg : '********'" required><br />
 
         <!--  PHONE NUMBER -->
         <label for="">Phone Number</label>
-        <input [(ngModel)]="applicationvalue.phoneNumber" name="phoneNumber" type="number" min="1" class="form-control"
+        <input [(ngModel)]="personalValue.phoneNumber" name="phoneNumber" type="number" min="1" class="form-control"
           id="phoneNumber" placeholder="eg : '9845632172'" required max=10 minlength=10><br />
 
         <!--  DATE OF BIRTH -->
         <label for="">Date of Birth</label>
-        <input [(ngModel)]="applicationvalue.birthDate" name="birthDate" type="date" class="form-control" id="birthDate"
+        <input [(ngModel)]="personalValue.birthDate" name="birthDate" type="date" class="form-control" id="birthDate"
           placeholder="eg : '30/05/1995'" required><br />
 
         <!--  GENDER -->
         <label for="">Gender</label>
-        <select id="gender" input [(ngModel)]="applicationvalue.gender" class="form-control"><br />
+        <select id="gender" input [(ngModel)]="personalValue.gender" class="form-control"><br />
           <option selected>Male</option>
           <option>Female</option>
           <option>Other</option>
@@ -198,7 +197,7 @@
 
         <!--  NATIONALITY -->
         <label for="">Nationality</label>
-        <select id="nationality" input [(ngModel)]="applicationvalue.nationality" class="form-control" required>
+        <select id="nationality" input [(ngModel)]="personalValue.nationality" class="form-control" required>
           <option selected>Indian</option>
           <option>Afghan</option>
           <option>Argentinian</option>
@@ -233,17 +232,16 @@
 
         <!--  AADHAR NUMBER -->
         <label for="">Aadhar Number</label>
-        <input [(ngModel)]="applicationvalue.aadharNumber" name="aadharNumber" type="number" min="1"
-          class="form-control" id="aadharNumber" placeholder="eg : '754123698541'" required maxlength=12
-          minlength=12><br />
+        <input [(ngModel)]="personalValue.aadharNumber" name="aadharNumber" type="number" min="1" class="form-control"
+          id="aadharNumber" placeholder="eg : '754123698541'" required maxlength=12 minlength=12><br />
 
         <!--  PAN NUMBER -->
         <label for="">PAN Number</label>
-        <input [(ngModel)]="applicationvalue.panNumber" name="panNumber" type="text" class="form-control" id="panNumber"
+        <input [(ngModel)]="personalValue.panNumber" name="panNumber" type="text" class="form-control" id="panNumber"
           placeholder="eg : 'FGRH785L'" required><br />
 
 
-        <input type="submit" value="Submit" (click)=PropertyDetailsForm() />
+        <input type="submit" value="Submit" (click)=PersonalDetailForm() />
       </div>
     </form>
   </div>

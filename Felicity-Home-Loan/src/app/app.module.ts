@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { RouterModule } from '@angular/router';
 import { ApplicationComponent } from './application/application.component';
-import { FileuploadComponent } from './fileUpload/fileupload/fileupload.component';
+import { FileuploadComponent } from './fileupload/fileupload.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login-service';
@@ -27,15 +27,15 @@ import { HomePageComponent } from './home-page/home-page.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path:'app-calculator',component:CalculatorComponent},
-      {path:'app-application',component:ApplicationComponent},
-      {path:'app-fileupload',component:FileuploadComponent},
-      {path:'app-login',component:LoginComponent},  
+      { path: 'app-calculator', component: CalculatorComponent },
+      { path: 'app-application', component: ApplicationComponent },
+      { path: 'app-fileupload', component: FileuploadComponent },
+      { path: 'app-login', component: LoginComponent },
       { path: 'app-home-page', component: HomePageComponent }
     ]),
     AppRoutingModule
   ],
-  providers: [HttpClient,LoginService],
+  providers: [HttpClient, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

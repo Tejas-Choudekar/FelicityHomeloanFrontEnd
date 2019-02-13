@@ -2,17 +2,17 @@
 <form>
   <div class="form-group">
     <label for="username">Username</label>
-    <input [(ngModel)]="loginuser.emailId" class="form-control" id="username" 
-    placeholder="username" name="username" required/>
+    <input [(ngModel)]="loginuser.emailId" class="form-control" id="username" placeholder="username" name="username"
+      required />
   </div>
 
-    <div class="form-group">
-      <label for="password">password</label>
-      <input type="password" [(ngModel)]="loginuser.password" class="form-control" 
-      id="password" placeholder="password" name="password" required/>
-    </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <input type="password" [(ngModel)]="loginuser.password" class="form-control" id="password" placeholder="password"
+      name="password" required />
+  </div>
 
-    <div class="form-group">
-      <button class="btn btn-success" (click)="loginUser()">Login</button>
-    </div>
+  <div class="form-group">
+    <button class="btn btn-success" (click)="loginUser()">Login</button>
+  </div>
 </form>

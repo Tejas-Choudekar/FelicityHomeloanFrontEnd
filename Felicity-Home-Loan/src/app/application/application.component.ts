@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { applicationValue } from './applicationValue';
+import { propertyDetailValue } from './propertyDetailValue';
+import { incomeDetailValue } from './incomeDetailValue';
+import { loanDetailValue } from './loanDetailValue';
+import { personalDetailValue } from './personalDetailValue';
 
 @Component({
   selector: 'app-application',
@@ -21,26 +24,30 @@ export class ApplicationComponent implements OnInit {
   ngOnInit() {
   }
 
-  applicationvalue: applicationValue = new applicationValue();
+  propertyValue: propertyDetailValue = new propertyDetailValue();
+  incomeValue: incomeDetailValue = new incomeDetailValue();
+  loanValue: loanDetailValue = new loanDetailValue();
+  personalValue: personalDetailValue = new personalDetailValue();
+  //applicationvalue: applicationValue = new applicationValue();
 
-  PropertyDetailsForm(pdform) {
-
-  }
-
-  IncomeDetailsForm(idform) {
-
-  }
-
-  LoanDetailsForm(ldform) {
+  PropertyDetailForm() {
 
   }
 
-  PersonalDetailsForm(pedform) {
+  IncomeDetailForm() {
+
+  }
+
+  LoanDetailForm() {
+
+  }
+
+  PersonalDetailForm() {
 
     let confirm = true;
 
     //verify the password
-    if (this.confirmPassword != this.applicationvalue.password) {
+    if (this.confirmPassword != this.personalValue.password) {
       confirm = false;
       this.array['password'] = "password does not match";
     }
