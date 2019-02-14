@@ -3,7 +3,7 @@ export class IncomeDetailValue {
     public typeOfEmployee?: String,
     public retirementAge?: number,
     public organisationType?: String,
-    public employername?: String,
+    public employerName?: String,
     public salary?: number
   ) {
 

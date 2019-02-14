@@ -1,0 +1,55 @@
+<div class="container">
+  <!-- <div class="row"> -->
+  <!-- <div class="col-md-6"></div> -->
+
+  <!--This div has form for LOAN DETAILS-->
+  <div class="loan-details">
+    <form #ldform="ngForm" ngNativeValidate class="px-5 py-3"  (ngSubmit)="LoanDetailForm()">
+      <h2>Application Details</h2><br />
+      <h4>Loan Details</h4>
+
+
+      <!--  MAXIMUM LOAN GRANTABLE -->
+      <div class="form-group">
+        <label for="">Maximum Loan Grantable</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">₹</div>
+          </div>
+          {{loanValue.maxGrantableLoan}}
+          <!-- <input [(ngModel)]="loanValue.maxGrantableLoan" name="maxGrantableLoan" min="1" type="number"
+            class="form-control" id="maxGrantableLoan" placeholder="eg : '5000000'" required> -->
+        </div>
+      </div>
+
+      <!--  RATE OF INTEREST -->
+      <div class="form-group">
+        <label for="">Rate Of Interest</label>
+        <input [(ngModel)]="loanValue.rateOfInterest" name="rateOfInterest" step="any" type="number" min="1" max="15"
+          class="form-control" id="rateOfInterest" placeholder="eg : '8.5'" required>
+      </div>
+
+      <!--  TENURE -->
+      <div class="form-group">
+        <label for="">Tenure</label>
+        <input [(ngModel)]="loanValue.tenure" name="tenure" type="number" min="1" class="form-control" id="tenure"
+          placeholder="in months, eg : '35'" required>
+      </div>
+
+      <!--  LOAN AMOUNT -->
+      <div class="form-group">
+        <label for="">Loan Amount</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">₹</div>
+          </div>
+          <input [(ngModel)]="loanValue.loanAmount" name="loanAmount" type="number" min="1" class="form-control"
+            id="loanAmount" placeholder="eg : '2300000'" required>
+        </div>
+      </div><br />
+
+      <input type="submit" value="Submit" />
+
+    </form>
+  </div>
+</div>

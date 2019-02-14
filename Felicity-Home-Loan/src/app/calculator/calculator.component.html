@@ -9,9 +9,10 @@
             <!--  MONTHLY INCOME -->
 
             <label for="monthlyIncome">Monthly income</label>
-            <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome" type="range" min="10000" max="2000000" step="1000" class="form-control-range" 
-              id="monthlyIncome" oninput="monthlyIncome_disp.value = monthlyIncome.value" placeholder="eg : '45000'" required><br />
-              <h6>Value: ₹ <output  id="monthlyIncome_disp"></output><br/><br/></h6>
+            <input [(ngModel)]="calculatorvalue.monthlyIncome" name="monthlyIncome" type="range" min="10000"
+              max="2000000" step="1000" class="form-control-range" id="monthlyIncome"
+              oninput="monthlyIncome_disp.value = monthlyIncome.value" placeholder="eg : '45000'" required><br />
+            <h6>Value: ₹ <output id="monthlyIncome_disp"></output><br /><br /></h6>
 
 
             <input type="submit" value="calculate" (click)=calculateEligibility() />
@@ -33,19 +34,22 @@
 
             <!--  LOAN -->
             <label for="loan">Loan</label>
-            <input [(ngModel)]="calculatorvalue.loan" name="loan" type="range" min="10000" max="200000000" step="10000" class="form-control-range" id="loan" oninput="loan_disp.value = loan.value" required><br />
-              <h6>Value: ₹ <output  id="loan_disp"></output><br/><br/></h6>
+            <input [(ngModel)]="calculatorvalue.loan" name="loan" type="range" min="10000" max="200000000" step="10000"
+              class="form-control-range" id="loan" oninput="loan_disp.value = loan.value" required><br />
+            <h6>Value: ₹ <output id="loan_disp"></output><br /><br /></h6>
 
             <!--  TENURE -->
             <label for="tenure">Tenure (in months)</label>
-            <input [(ngModel)]="calculatorvalue.tenure" name="tenure" type="range" min="1" max="360"class="form-control-range" id="tenure" oninput="tenure_disp.value = tenure.value" required><br/>
-              <h6>Value (month):  <output  id="tenure_disp"></output><br/><br/></h6>
+            <input [(ngModel)]="calculatorvalue.tenure" name="tenure" type="range" min="1" max="360"
+              class="form-control-range" id="tenure" oninput="tenure_disp.value = tenure.value" required><br />
+            <h6>Value (month): <output id="tenure_disp"></output><br /><br /></h6>
 
             <!--  RATE OF INTEREST -->
             <label for="rateOfInterest">Rate of Interest</label>
-            <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="range" min="1" max="15" class="form-control-range" 
-              id="rateOfInterest" oninput="rateOfInterest_disp.value = rateOfInterest.value" required><br />
-              <h6>Value (%):  <output  id="rateOfInterest_disp"></output><br/><br/></h6>
+            <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="range" min="1" max="15"
+              class="form-control-range" id="rateOfInterest" oninput="rateOfInterest_disp.value = rateOfInterest.value"
+              required><br />
+            <h6>Value (%): <output id="rateOfInterest_disp"></output><br /><br /></h6>
 
             <input type="submit" value="calculate" (click)=calculateEMI() />
           </div>

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 
 @Component({
-  selector: 'homeLoan-fileupload',
+  selector: 'homeLoan-fileUpload',
   templateUrl: './fileupload.component.html',
   styleUrls: ['./fileupload.component.css']
 })
-export class FileuploadComponent implements OnInit {
+export class FileUploadComponent implements OnInit {
   selectedFile: File = null;
-
+  uploadProgress: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -25,11 +25,13 @@ export class FileuploadComponent implements OnInit {
     fd.append('image', this.selectedFile, this.selectedFile.name);
     this.http.post('http://localhost:8181/upload', fd, { reportProgress: true, observe: 'events' }).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress) {
-        console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
-        console.log('status');
+        this.uploadProgress = Math.round(event.loaded / event.total * 100);
+        // console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
+        
       }
       else if (event.type === HttpEventType.Response) {
-        console.log(event);
+        this.uploadProgress = event;
+        //console.log(event);
       }
     });
   }
