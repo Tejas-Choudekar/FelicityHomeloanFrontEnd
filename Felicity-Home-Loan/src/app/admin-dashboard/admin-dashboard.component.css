@@ -1,0 +1,6 @@
+.formBox{
+    height: 375px;
+}
+.formBoxBody{
+    overflow-y: scroll;
+}

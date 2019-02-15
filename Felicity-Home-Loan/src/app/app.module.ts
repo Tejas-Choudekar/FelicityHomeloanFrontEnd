@@ -23,6 +23,7 @@ import { PersonalDetailService } from './personal-detail/personalDetail-service'
 import { SharedService } from './shared-service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -39,13 +40,15 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     PersonalDetailComponent,
     ApplicationSuccessfulComponent,
     UserDashboardComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: '', component: HomePageComponent },
       { path: 'homeLoan-calculator', component: CalculatorComponent },
       { path: 'homeLoan-application', component: ApplicationComponent },
       { path: 'homeLoan-fileUpload', component: FileUploadComponent },
@@ -55,7 +58,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
       { path: 'homeloan-income-detail', component: IncomeDetailComponent },
       { path: 'homeloan-loan-detail', component: LoanDetailComponent },
       { path: 'homeloan-personal-detail', component: PersonalDetailComponent },
-      { path: 'homeloan-application-successful', component: ApplicationSuccessfulComponent }
+      { path: 'homeloan-application-successful', component: ApplicationSuccessfulComponent },
+      { path: 'homeloan-admin-dashboard', component: AdminDashboardComponent },
+      { path: 'homeloan-user-dashboard', component: UserDashboardComponent },
+      { path: 'homeloan-about-us', component: AboutUsComponent }
     ]),
     AppRoutingModule
   ],

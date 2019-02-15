@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5 mb-5">
   <div class="row">
     <div class="col-md-6">
       <div class="eligibility-calculator">
@@ -47,8 +47,8 @@
             <!--  RATE OF INTEREST -->
             <label for="rateOfInterest">Rate of Interest</label>
             <input [(ngModel)]="calculatorvalue.rateOfInterest" name="rateOfInterest" type="range" min="1" max="15"
-              class="form-control-range" id="rateOfInterest" oninput="rateOfInterest_disp.value = rateOfInterest.value"
-              required><br />
+              step="0.5" class="form-control-range" id="rateOfInterest"
+              oninput="rateOfInterest_disp.value = rateOfInterest.value" required><br />
             <h6>Value (%): <output id="rateOfInterest_disp"></output><br /><br /></h6>
 
             <input type="submit" value="calculate" (click)=calculateEMI() />

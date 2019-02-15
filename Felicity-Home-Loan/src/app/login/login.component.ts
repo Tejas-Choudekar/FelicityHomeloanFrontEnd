@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Login } from './login';
 import { LoginService } from './login-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'homeLoan-login',
@@ -10,7 +11,7 @@ import { LoginService } from './login-service';
 export class LoginComponent implements OnInit {
 
 
-  constructor(private rs: LoginService) { }
+  constructor(private rs: LoginService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,12 +19,21 @@ export class LoginComponent implements OnInit {
   loginuser: Login = new Login();
 
   loginUser() {
-    let url = 'http://localhost:8181/login/userlogin';
+    // let url = 'http://localhost:8181/login/userlogin';
+    let url = 'http://192.168.100.63:8181/login/userlogin';
     this.rs.retriveFromServer(url, this.loginuser).subscribe(data => {
-      console.log(data['status']);
+      this.loginuser=data['status'];
+      console.log(this.loginuser) 
 
-    });
+    if(this.loginuser === './Logged in Successfully!') {
+      this.router.navigate(['./homeloan-user-dashboard']);
+    }
+    else {
+      this.router.navigate(['./homeLoan-login']);
+    }
+  
 
+  })
 
   }
 
