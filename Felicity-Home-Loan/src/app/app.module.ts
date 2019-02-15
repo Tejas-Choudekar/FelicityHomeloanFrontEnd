@@ -21,6 +21,8 @@ import { IncomeDetailService } from './income-detail/incomeDetail-service';
 import { LoanDetailService } from './loan-detail/loanDetail-service';
 import { PersonalDetailService } from './personal-detail/personalDetail-service';
 import { SharedService } from './shared-service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { SharedService } from './shared-service';
     IncomeDetailComponent,
     LoanDetailComponent,
     PersonalDetailComponent,
-    ApplicationSuccessfulComponent
+    ApplicationSuccessfulComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
