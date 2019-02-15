@@ -1,0 +1,68 @@
+<div class="container">
+  <!-- <div class="row"> -->
+  <!-- <div class="col-md-6"></div> -->
+
+  <!--This div has form for INCOME DETAILS-->
+  <div class="income-details">
+    <form #idform="ngForm" ngNativeValidate class="px-5 py-3" (ngSubmit)="IncomeDetailForm()">
+      <h2>Application Details</h2><br />
+      <h4>Income Details</h4>
+
+
+      <!--  TYPE OF EMPLOYEE -->
+      <div class="form-group">
+        <label for="">Type Of Employee</label>
+        <select id="typeOfEmployee" input [(ngModel)]="incomeValue.typeOfEmployee" type="text" class="form-control"
+          name="typeOfEmployee" required>
+          <option selected value="Salaried">Salaried</option>
+          <option value="Self-Employed">Self-Employed</option>
+        </select>
+      </div>
+
+      <!--  RETIREMENT AGE -->
+      <div class="form-group">
+        <label for="">Retirement Age</label>
+        <input [(ngModel)]="incomeValue.retirementAge" name="retirementAge" type="number" min="35" max="62"
+          class="form-control" id="retirementAge" placeholder="eg : '60'" required>
+      </div>
+
+      <!--  ORGANIZATION TYPE -->
+      <div class="form-group">
+        <label for="">Organization Type</label>
+        <select id="organisationType" input [(ngModel)]="incomeValue.organisationType" type="text" class="form-control"
+          name="organisationType" required>
+          <option selected value="Cooperative">Cooperative</option>
+          <option value="NGO">NGO</option>
+          <option value="Government Organization">Government Organization</option>
+          <option value="Semi-Government Organization">Semi-Government Organization</option>
+          <option value="Political Organization">Political Organization</option>
+          <option value="Community Organization">Community Organization</option>
+          <option value="Trade Association">Trade Association</option>
+          <option value="Charitable Organization">Charitable Organization</option>
+        </select>
+      </div>
+
+      <!--  EMPLOYER NAME -->
+      <div class="form-group">
+        <label for="">Employer Name</label>
+        <input [(ngModel)]="incomeValue.employerName" name="employerName" type="text" class="form-control"
+          id="employerName" placeholder="eg : 'LTI'" required>
+      </div>
+
+      <!--  SALARY -->
+      <div class="form-group">
+        <label for="">Salary</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">₹</div>
+          </div>
+          <input [(ngModel)]="incomeValue.salary" name="salary" type="number" min="1" class="form-control" id="salary"
+            placeholder="per months, eg : '45000'" required><br />
+        </div>
+      </div>
+
+      <input type="submit" value="Submit"/>
+
+    </form>
+  </div>
+</div>

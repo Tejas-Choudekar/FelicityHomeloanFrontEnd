@@ -1,0 +1,42 @@
+<div class="container">
+  <!-- <div class="row"> -->
+  <!-- <div class="col-md-6"></div> -->
+
+  <!--This div has form for PROPERTY DETAILS-->
+  <div class="property-details">
+    <form #pdform="ngForm" ngNativeValidate class="px-5 py-3" (ngSubmit)="PropertyDetailForm()">
+      <h2>Application Details</h2><br />
+      <h4>Property Details</h4>
+
+
+      <!--  PROPERTY NAME -->
+      <div class="form-group">
+        <label for="">Property Name</label>
+        <input [(ngModel)]="propertyValue.propertyName" name="propertyName" type="text" class="form-control"
+          id="propertyName" placeholder="eg : 'E-305, Spring Valley Colony'" required>
+      </div>
+
+      <!--  PROPERTY LOCATION -->
+      <div class="form-group">
+        <label for="">Property Location</label>
+        <input [(ngModel)]="propertyValue.propertyLocation" name="propertyLocation" type="text" class="form-control"
+          id="propertyLocation" placeholder="eg : 'Andheri, Mumbai'" required>
+      </div>
+
+      <!--  ESTIMATED AMOUNT -->
+      <div class="form-group">
+        <label for="">Estimated Amount</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">₹</div>
+          </div>
+          <input [(ngModel)]="propertyValue.estimatedAmount" name="estimatedAmount" type="number" min="1"
+            class="form-control" id="estimatedAmount" placeholder="eg : '3200000'" required><br />
+        </div>
+      </div>
+
+      <input type="submit" value="Submit"/>
+
+    </form>
+  </div>
+</div>

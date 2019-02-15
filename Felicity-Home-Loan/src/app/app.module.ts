@@ -6,11 +6,23 @@ import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { RouterModule } from '@angular/router';
 import { ApplicationComponent } from './application/application.component';
-import { FileuploadComponent } from './fileupload/fileupload.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login-service';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PropertyDetailComponent } from './property-detail/property-detail.component';
+import { IncomeDetailComponent } from './income-detail/income-detail.component';
+import { LoanDetailComponent } from './loan-detail/loan-detail.component';
+import { PersonalDetailComponent } from './personal-detail/personal-detail.component';
+import { ApplicationSuccessfulComponent } from './application-successful/application-successful.component';
+import { FileUploadComponent } from './file-upload/fileupload.component';
+import { PropertyDetailService } from './property-detail/propertyDetail-service';
+import { IncomeDetailService } from './income-detail/incomeDetail-service';
+import { LoanDetailService } from './loan-detail/loanDetail-service';
+import { PersonalDetailService } from './personal-detail/personalDetail-service';
+import { SharedService } from './shared-service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -18,9 +30,16 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     CalculatorComponent,
     ApplicationComponent,
-    FileuploadComponent,
+    FileUploadComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    PropertyDetailComponent,
+    IncomeDetailComponent,
+    LoanDetailComponent,
+    PersonalDetailComponent,
+    ApplicationSuccessfulComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,13 +48,18 @@ import { HomePageComponent } from './home-page/home-page.component';
     RouterModule.forRoot([
       { path: 'homeLoan-calculator', component: CalculatorComponent },
       { path: 'homeLoan-application', component: ApplicationComponent },
-      { path: 'homeLoan-fileupload', component: FileuploadComponent },
+      { path: 'homeLoan-fileUpload', component: FileUploadComponent },
       { path: 'homeLoan-login', component: LoginComponent },
-      { path: 'homeLoan-home-page', component: HomePageComponent }
+      { path: 'homeLoan-home-page', component: HomePageComponent },
+      { path: 'homeloan-property-detail', component: PropertyDetailComponent },
+      { path: 'homeloan-income-detail', component: IncomeDetailComponent },
+      { path: 'homeloan-loan-detail', component: LoanDetailComponent },
+      { path: 'homeloan-personal-detail', component: PersonalDetailComponent },
+      { path: 'homeloan-application-successful', component: ApplicationSuccessfulComponent }
     ]),
     AppRoutingModule
   ],
-  providers: [HttpClient, LoginService],
+  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

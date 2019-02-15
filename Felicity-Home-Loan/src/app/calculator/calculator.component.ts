@@ -17,13 +17,12 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculateEligibility(): number {
-    //console.log("here"+this.calculatorvalue.monthlyIncome);
-
+    
     this.calculatorvalue.TotalEligibility = Math.trunc(60 * (0.6 * this.calculatorvalue.monthlyIncome));
 
     //Loan amount = 60 * (0.6 * net monthly salary)
 
-    return this.calculatorvalue.TotalEligibility;
+    return;
   }
 
   calculateEMI(): number {
@@ -34,6 +33,7 @@ export class CalculatorComponent implements OnInit {
       Math.trunc(((this.calculatorvalue.loan * this.calculatorvalue.newROI) *
         (Math.pow((1 + this.calculatorvalue.newROI), this.calculatorvalue.tenure))) /
         ((Math.pow((1 + this.calculatorvalue.newROI), this.calculatorvalue.tenure)) - 1));
+
     //EMI = P*R*{((1+R)^n)/((1+R)^n-1)}
 
     return;

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { PropertyDetailValue } from './propertyDetailValue';
-import { IncomeDetailValue } from './incomeDetailValue';
-import { LoanDetailValue } from './loanDetailValue';
-import { PersonalDetailValue } from './personalDetailValue';
+import { PropertyDetailValue } from '../property-detail/propertyDetailValue';
+import { IncomeDetailValue } from '../income-detail/incomeDetailValue';
+import { LoanDetailValue } from '../loan-detail/loanDetailValue';
+import { PersonalDetailValue } from '../personal-detail/personalDetailValue';
+import { PropertyDetailService } from '../property-detail/propertyDetail-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'homeLoan-application',
@@ -12,9 +14,7 @@ import { PersonalDetailValue } from './personalDetailValue';
 export class ApplicationComponent implements OnInit {
 
 
-  confirmPassword: String;
-  che: Boolean;
-  array = { password: "", msg: "" };
+  
 
   keyPress(event: any) {
     const pattern = /[0-9\+\-\ ]/;
@@ -24,43 +24,27 @@ export class ApplicationComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private propertydetailService: PropertyDetailService, private router: Router) {
 
   }
 
 
   ngOnInit() {
   }
+  response: string;
 
-  propertyValue: PropertyDetailValue = new PropertyDetailValue();
-  incomeValue: IncomeDetailValue = new IncomeDetailValue();
-  loanValue: LoanDetailValue = new LoanDetailValue();
-  personalValue: PersonalDetailValue = new PersonalDetailValue();
+  
+  
+  
+  
   //applicationvalue: applicationValue = new applicationValue();
 
-  PropertyDetailForm() {
+  
 
-  }
+  
 
-  IncomeDetailForm() {
+  
 
-  }
-
-  LoanDetailForm() {
-
-  }
-
-  PersonalDetailForm() {
-
-    let confirm = true;
-
-    //verify the password
-    if (this.confirmPassword != this.personalValue.password) {
-      confirm = false;
-      this.array['password'] = "Pasword does not match";
-    }
-
-
-  }
+  
 }
 
