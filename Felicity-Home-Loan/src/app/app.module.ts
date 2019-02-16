@@ -25,6 +25,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { UserDashboardService } from './user-dashboard/user-dashboard_service';
+import { LoanStatusComponent } from './loan-status/loan-status.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { UserDashboardService } from './user-dashboard/user-dashboard_service';
     ApplicationSuccessfulComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LoanStatusComponent
   ],
   imports: [
     BrowserModule,

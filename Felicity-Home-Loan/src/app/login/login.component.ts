@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   loginuser: Login = new Login();
 
   loginUser() {
-    window.localStorage.setItem('userDetails',JSON.stringify({token:this.loginUser , name:'userDetails'}))
-    console.log(this.loginUser);
+    window.localStorage.setItem('userDetails',JSON.stringify({token:this.loginuser , name:'userDetails'}))
+    console.log(this.loginuser);
     let url = 'http://localhost:8181/login/userlogin';
     this.rs.retriveFromServer(url, this.loginuser).subscribe(data => {
       this.loginuser=data['status'];
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['./homeloan-user-dashboard']);
     }
     else {
+      localStorage.removeItem('userDetails');
       this.router.navigate(['./homeloan-login']);
     }
   
