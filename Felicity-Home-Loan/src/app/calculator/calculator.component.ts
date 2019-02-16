@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalculatorValue } from "./calculatorValue";
 
 @Component({
-  selector: 'homeLoan-calculator',
+  selector: 'homeloan-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css']
 })
