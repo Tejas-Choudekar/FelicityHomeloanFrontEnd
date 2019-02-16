@@ -24,6 +24,7 @@ import { SharedService } from './shared-service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { UserDashboardService } from './user-dashboard/user-dashboard_service';
 
 
 @NgModule({
@@ -65,7 +66,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ]),
     AppRoutingModule
   ],
-  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService],
+  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService, UserDashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
