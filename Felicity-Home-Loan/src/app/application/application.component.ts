@@ -7,7 +7,7 @@ import { PropertyDetailService } from '../property-detail/propertyDetail-service
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'homeLoan-application',
+  selector: 'homeloan-application',
   templateUrl: './application.component.html',
   styleUrls: ['./application.component.css']
 })

@@ -4,7 +4,7 @@ import { LoginService } from './login-service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'homeLoan-login',
+  selector: 'homeloan-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -19,21 +19,22 @@ export class LoginComponent implements OnInit {
   loginuser: Login = new Login();
 
   loginUser() {
-    // let url = 'http://localhost:8181/login/userlogin';
-    let url = 'http://192.168.100.63:8181/login/userlogin';
+    window.localStorage.setItem('userDetails',JSON.stringify({token:this.loginUser , name:'userDetails'}))
+    console.log(this.loginUser);
+    let url = 'http://localhost:8181/login/userlogin';
     this.rs.retriveFromServer(url, this.loginuser).subscribe(data => {
       this.loginuser=data['status'];
       console.log(this.loginuser) 
 
-    if(this.loginuser === './Logged in Successfully!') {
+    if(this.loginuser === 'Logged in Successfully!') {
       this.router.navigate(['./homeloan-user-dashboard']);
     }
     else {
-      this.router.navigate(['./homeLoan-login']);
+      this.router.navigate(['./homeloan-login']);
     }
   
 
-  })
+  });
 
   }
 

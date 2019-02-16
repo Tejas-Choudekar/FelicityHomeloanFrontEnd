@@ -46,7 +46,7 @@ export class PersonalDetailComponent implements OnInit {
       console.log(this.response)
 
       if(this.response === 'Personal Details added successfully!' ){
-        this.router.navigate(['./homeLoan-fileUpload']);
+        this.router.navigate(['./homeloan-fileUpload']);
       }
       else{
         this.router.navigate(['./homeloan-personal-detail']);
