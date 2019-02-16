@@ -48,8 +48,8 @@
       <!--  CONFIRM PASSWORD -->
       <div class="form-group">
         <label for="">Confirm Password</label>
-        <input [(ngModel)]=confirmPassword name="confirmPassword"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="form-control"
-          id="confirmPassword" placeholder="eg : '********'" required><br />
+        <input [(ngModel)]=confirmPassword name="confirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          type="password" class="form-control" id="confirmPassword" placeholder="eg : '********'" required><br />
         <p style="color:red;position: relative;left:1.2%;">{{array['password']}} </p>
       </div>
 
@@ -65,7 +65,7 @@
       <div class="form-group">
         <label for="">Date of Birth</label>
         <input [(ngModel)]="personalValue.birthDate" name="birthDate" type="date" class="form-control" id="birthDate"
-          placeholder="eg : '30/05/1995'" required><br />
+          min="01-01-2000" placeholder="eg : '30/05/1995'" required><br />
       </div>
 
       <!--  GENDER -->
