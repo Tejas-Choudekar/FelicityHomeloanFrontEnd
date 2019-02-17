@@ -9,7 +9,6 @@ const httpOptions = {
 
 @Injectable()
 export class PropertyDetailService{
-    propertydetails: PropertyDetailValue[];
 
     constructor(private http: HttpClient){
 
@@ -18,5 +17,12 @@ export class PropertyDetailService{
     sendToServer(propertydetails: PropertyDetailValue): Observable<String>{
         let url = "http://localhost:8181/propertydetails/add";
         return this.http.post<String>(url, propertydetails);
+    }
+
+    // retrieveFromServer(url): Observable<Product[]> {
+    //     return this.http.get<Product[]>(url);
+
+    retrieveFromServer(url): Observable<PropertyDetailValue>{
+        return this.http.get<PropertyDetailValue>(url);
     }
 }

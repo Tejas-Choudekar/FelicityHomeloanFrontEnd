@@ -11,9 +11,9 @@ export class LoginService {
   constructor(private http: HttpClient) {
 
   }
-  retriveFromServer(url, loginuser): Observable<String> {
+  retriveFromServer(url, loginusers): Observable<String> {
 
-    return this.http.post<String>(url, loginuser);
+    return this.http.post<String>(url, loginusers);
 
   }
 }

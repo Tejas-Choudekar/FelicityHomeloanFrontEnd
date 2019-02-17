@@ -27,6 +27,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { UserDashboardService } from './user-dashboard/user-dashboard_service';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminLoginService } from './admin-login/admin-login-service';
+import { LoanStatusComponent } from './loan-status/loan-status.component';
+
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { AdminLoginService } from './admin-login/admin-login-service';
     UserDashboardComponent,
     AdminDashboardComponent,
     AboutUsComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    LoanStatusComponent
   ],
   imports: [
     BrowserModule,

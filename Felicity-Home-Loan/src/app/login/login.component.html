@@ -2,17 +2,23 @@
   <form class="px-5 py-3">
     <h2>User Login</h2>
     <div class="form-group">
-      <label for="username">Username</label>
-      <input [(ngModel)]="loginuser.emailId" class="form-control" type="email" id="username" placeholder="username"
+      <label for="username">E-mail</label>
+      <input [(ngModel)]="loginuser.emailId" class="form-control" type="email" id="username" placeholder="eg : 'user@example.com'"
         name="username" required />
     </div>
-
+    <!--PASSWORD-->
     <div class="form-group">
-      <label for="password">password</label>
+      <label for="password">Password</label>
       <input type="password" [(ngModel)]="loginuser.password" class="form-control" type="password" id="password"
         placeholder="********" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
         required />
+    </div>
+    <!--ACCOUNT NUMBER-->
+    <div class="form-group">
+      <label for="applicationid">Account Number</label>
+      <input [(ngModel)]="loginuser.applicationid" class="form-control" type="number" id="applicationid" min="1"
+        placeholder="eg : '37096'" name="applicationid" required />
     </div>
 
     <div class="form-group">
