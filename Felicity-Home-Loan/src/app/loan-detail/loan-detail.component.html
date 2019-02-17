@@ -4,7 +4,7 @@
 
   <!--This div has form for LOAN DETAILS-->
   <div class="loan-details">
-    <form #ldform="ngForm" ngNativeValidate class="px-5 py-3"  (ngSubmit)="LoanDetailForm()">
+    <form #ldform="ngForm" ngNativeValidate class="px-5 py-3" (ngSubmit)="LoanDetailForm()">
       <h2>Application Details</h2><br />
       <h4>Loan Details</h4>
 
@@ -16,7 +16,7 @@
           <div class="input-group-prepend">
             <div class="input-group-text">₹</div>
           </div>
-          {{loanValue.maxGrantableLoan}}
+          <h6>{{  loanValue.maxGrantableLoan}}</h6>
           <!-- <input [(ngModel)]="loanValue.maxGrantableLoan" name="maxGrantableLoan" min="1" type="number"
             class="form-control" id="maxGrantableLoan" placeholder="eg : '5000000'" required> -->
         </div>
@@ -48,7 +48,7 @@
         </div>
       </div><br />
 
-      <input type="submit" value="Submit" />
+      <button class="btn btn-success" input type="submit" value="Submit">Submit</button>
 
     </form>
   </div>
