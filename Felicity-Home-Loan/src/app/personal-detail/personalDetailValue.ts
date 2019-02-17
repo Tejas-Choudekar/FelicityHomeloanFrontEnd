@@ -1,5 +1,6 @@
 export class PersonalDetailValue {
   constructor(
+    public personalDetailsId?: number,
     public firstName?: String,
     public middleName?: String,
     public lastName?: String,

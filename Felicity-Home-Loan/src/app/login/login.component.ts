@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  invalid: any;
 
 
   constructor(private rs: LoginService, private router: Router) { }
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     else {
       localStorage.removeItem('userDetails');
       this.router.navigate(['./homeloan-login']);
+      this.invalid="User Name or Password invalid";
     }
   
 

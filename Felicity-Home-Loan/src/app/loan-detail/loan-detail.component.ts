@@ -15,9 +15,12 @@ export class LoanDetailComponent implements OnInit {
 
   constructor(private loandetailService: LoanDetailService, private sharedService: SharedService, private router: Router) { }
   loanValue: LoanDetailValue = new LoanDetailValue();
-
+  loginuser: any;
   ngOnInit() {
     this.loanValue.maxGrantableLoan = this.sharedService.maxGrantableLoan;
+    this.loginuser= JSON.parse(localStorage.getItem('applicationId'))['token'];
+    this.loanValue.loanDetailsId= this.loginuser;
+
   }
 
   response: string;

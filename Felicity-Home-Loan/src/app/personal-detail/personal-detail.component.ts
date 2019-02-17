@@ -18,9 +18,12 @@ export class PersonalDetailComponent implements OnInit {
     }
   }
   
+  //personalvalue: PersonalDetailValue= new PersonalDetailValue();
   constructor(private personaldetailService: PersonalDetailService, private router: Router) { }
-
+  loginuser: any;
   ngOnInit() {
+    this.loginuser= JSON.parse(localStorage.getItem('applicationId'))['token'];
+    this.personalValue.personalDetailsId= this.loginuser;
   }
 
   response: string;

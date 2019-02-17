@@ -26,6 +26,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AboutUsComponent } from './about-us/about-us.component';
 import { UserDashboardService } from './user-dashboard/user-dashboard_service';
 import { LoanStatusComponent } from './loan-status/loan-status.component';
+import { LoanStatusService } from './loan-status/loanStatus-service';
 
 
 @NgModule({
@@ -68,7 +69,7 @@ import { LoanStatusComponent } from './loan-status/loan-status.component';
     ]),
     AppRoutingModule
   ],
-  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService, UserDashboardService],
+  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService, UserDashboardService, LoanStatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

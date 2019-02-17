@@ -21,10 +21,10 @@ export class PropertyDetailComponent implements OnInit {
 
   PropertyDetailForm() {
     this.propertydetailService.sendToServer(this.propertyValue).subscribe(data =>{
-      this.response = data['status'];
+      this.response = data['applicationid'];
       console.log(this.response)
-
-      if(this.response === 'Property Details added successfully!' ){
+      window.localStorage.setItem('applicationId',JSON.stringify({token:this.response , name:'applicationId'}))
+      if(this.response != null ){
         this.router.navigate(['./homeloan-income-detail']);
       }
       else{

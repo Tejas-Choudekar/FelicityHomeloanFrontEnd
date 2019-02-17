@@ -11,20 +11,21 @@ import { SharedService } from '../shared-service';
 })
 export class IncomeDetailComponent implements OnInit {
 
- 
+  incomeValue: IncomeDetailValue = new IncomeDetailValue();
   constructor(private incomedetailService: IncomeDetailService, private sharedService: SharedService , private router: Router) { }
-
+  loginuser: any;
   ngOnInit() {
+    this.loginuser= JSON.parse(localStorage.getItem('applicationId'))['token'];
+  
+  this.incomeValue.incomeDetailsId= this.loginuser;
   }
 
   response: string;
-
-  incomeValue: IncomeDetailValue = new IncomeDetailValue();
-  
   
 
   IncomeDetailForm() {
     this.incomedetailService.sendToServer(this.incomeValue).subscribe(data =>{
+      
       this.response = data['status'];
       console.log(this.response)
       this.calculateMaxGrantableLoan();
