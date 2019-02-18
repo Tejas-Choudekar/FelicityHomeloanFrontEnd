@@ -19,4 +19,9 @@ export class IncomeDetailService{
         let url = "http://localhost:8181/incomedetails/add";
         return this.http.post<String>(url, incomeDetails);
     }
+
+    
+    retrieveFromServer(url): Observable<IncomeDetailValue>{
+        return this.http.get<IncomeDetailValue>(url);
+    }
 }

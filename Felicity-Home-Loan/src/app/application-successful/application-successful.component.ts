@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'homeloan-application-successful',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationSuccessfulComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router: Router) { }
+  loginuser: any;
   ngOnInit() {
+    this.loginuser= JSON.parse(localStorage.getItem('applicationId'))['token'];
+  }
+
+  onOk(){
+    localStorage.removeItem('applicationId');
+    this.router.navigate(['./homeloan-login']);
   }
 
 }

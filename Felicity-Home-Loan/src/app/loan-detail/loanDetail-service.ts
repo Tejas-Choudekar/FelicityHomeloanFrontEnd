@@ -19,4 +19,9 @@ export class LoanDetailService{
         let url = "http://localhost:8181/loandetails/add";
         return this.http.post<String>(url, loandetails);
     }
+
+    
+    retrieveFromServer(url): Observable<LoanDetailValue>{
+        return this.http.get<LoanDetailValue>(url);
+    }
 }

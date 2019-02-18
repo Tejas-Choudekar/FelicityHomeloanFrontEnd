@@ -25,8 +25,11 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { UserDashboardService } from './user-dashboard/user-dashboard_service';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminLoginService } from './admin-login/admin-login-service';
 import { LoanStatusComponent } from './loan-status/loan-status.component';
 import { LoanStatusService } from './loan-status/loanStatus-service';
+
 
 
 @NgModule({
@@ -45,6 +48,7 @@ import { LoanStatusService } from './loan-status/loanStatus-service';
     UserDashboardComponent,
     AdminDashboardComponent,
     AboutUsComponent,
+    AdminLoginComponent,
     LoanStatusComponent
   ],
   imports: [
@@ -65,11 +69,13 @@ import { LoanStatusService } from './loan-status/loanStatus-service';
       { path: 'homeloan-application-successful', component: ApplicationSuccessfulComponent },
       { path: 'homeloan-admin-dashboard', component: AdminDashboardComponent },
       { path: 'homeloan-user-dashboard', component: UserDashboardComponent },
-      { path: 'homeloan-about-us', component: AboutUsComponent }
+      { path: 'homeloan-about-us', component: AboutUsComponent },
+      { path: 'homeloan-admin-login', component: AdminLoginComponent }
     ]),
     AppRoutingModule
   ],
-  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService, UserDashboardService, LoanStatusService],
+  providers: [HttpClient, LoginService, PropertyDetailService, IncomeDetailService, LoanDetailService, PersonalDetailService, SharedService, UserDashboardService, LoanStatusService,AdminLoginService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule {

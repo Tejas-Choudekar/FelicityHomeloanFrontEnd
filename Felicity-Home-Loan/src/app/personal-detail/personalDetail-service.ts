@@ -19,4 +19,9 @@ export class PersonalDetailService{
         let url = "http://localhost:8181/personaldetails/add";
         return this.http.post<String>(url, personalDetails);
     }
+
+    
+    retrieveFromServer(url): Observable<PersonalDetailValue>{
+        return this.http.get<PersonalDetailValue>(url);
+    }
 }
