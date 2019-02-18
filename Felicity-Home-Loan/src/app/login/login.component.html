@@ -1,5 +1,7 @@
 <div class="container">
   <form class="px-5 py-3">
+
+    <!--USER LOGIN-->
     <h2>User Login</h2>
     <div class="form-group">
       <label for="username">E-mail</label>
@@ -20,7 +22,7 @@
       <input [(ngModel)]="loginuser.applicationid" class="form-control" type="number" id="applicationid" min="1"
         placeholder="eg : '37096'" name="applicationid" required />
     </div>
-
+    {{invalid}}<br />
     <div class="form-group">
       <button class="btn btn-success" (click)="loginUser()">Login</button>
     </div>

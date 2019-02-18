@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
- 
+  invalid: String;
   adminLogin: AdminLogin = new AdminLogin();
 
   constructor(private router: Router) { }
@@ -22,9 +22,9 @@ export class AdminLoginComponent implements OnInit {
       this.router.navigate(['./homeloan-admin-dashboard']);
     }
     else {
+      this.invalid='User Name or Password invalid';
       this.router.navigate(['./homeloan-admin-login']);
-      console.log(this.adminLogin.adminName);
-      console.log(this.adminLogin.adminPassword);
+     
     }
   
 

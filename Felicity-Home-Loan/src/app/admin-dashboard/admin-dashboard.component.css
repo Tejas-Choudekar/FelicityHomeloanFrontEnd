@@ -8,3 +8,9 @@
 .btn{
     background-color: black;
 }
+
+.text-right{
+    padding-top: 1em;
+    padding-right: 5em;
+    padding-bottom: 1em;
+}

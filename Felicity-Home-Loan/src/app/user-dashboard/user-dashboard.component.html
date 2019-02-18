@@ -1,127 +1,113 @@
-<div class = "text-right" style = "padding-top: 2em; padding-right: 2em;">
-  <button type="submit" name="Log Out" value="Submit" (click)="logout()">Log Out</button>
-</div>
+<div class="conatiner">
+  <div class="text-right" >
+    <button class="btn btn-success" type="submit" name="Log Out" value="Submit" (click)="logout()">Log Out</button>
+  </div>
 
-<div class="panel">
-  <div class="panel-body">
-    <div class="table-responsive" class="table" *ngIf="propertyValue">
-      <!-- <button (click)="loadUserDetails()">get info</button> -->
-      <table class="table">
-        <tr>
-          <th>Application Id:</th>
-          <td>{{propertyValue.applicationid}}</td>
-        </tr>
-        <tr>
-          <th>First Name</th>
-          <td>{{personalValue.firstName}}</td>
-        </tr>
-        <tr>
-          <th>Middle Name</th>
-          <td>{{personalValue.middleName}}</td>
-        </tr>
-        <tr>
-          <th>Last Name</th>
-          <td>{{personalValue.lastName}}</td>
-        </tr>
-        <tr>
-          <th>E-mail</th>
-          <td>{{personalValue.emailId}}</td>
-        </tr>
-        <tr>
-          <th>Phone Number</th>
-          <td>{{personalValue.phoneNumber}}</td>
-        </tr>
-        <tr>
-          <th>Date of Birth</th>
-          <td>{{personalValue.birthDate}}</td>
-        </tr>
-        <tr>
-          <th>Gender</th>
-          <td>{{personalValue.gender}}</td>
-        </tr>
-        <tr>
-          <th>Nationality</th>
-          <td>{{personalValue.nationality}}</td>
-        </tr>
-        <tr>
-          <th>Aadhar Number</th>
-          <td>{{personalValue.aadharNumber}}</td>
-        </tr>
-        <tr>
-          <th>PAN Number</th>
-          <td>{{personalValue.panNumber}}</td>
-        </tr>
-        <tr>
-          <th>Property Name</th>
-          <td>{{propertyValue.propertyName}}</td>
-        </tr>
-        <tr>
-          <th>Property Name</th>
-          <td>{{propertyValue.propertyName}}</td>
-        </tr>
-        <tr>
-          <th>Property Location</th>
-          <td>{{propertyValue.propertyLocation}}</td>
-        </tr>
-        <tr>
-          <th>Estimated Amount</th>
-          <td>{{propertyValue.estimatedAmount}}</td>
-        </tr>
-        <tr>
-          <th>Type Of Employee</th>
-          <td>{{incomeValue.typeOfEmployee}}</td>
-        </tr>
-        <tr>
-          <th>Retirement Age</th>
-          <td>{{incomeValue.retirementAge}}</td>
-        </tr>
-        <tr>
-          <th>Organization Type</th>
-          <td>{{incomeValue.organisationType}}</td>
-        </tr>
-        <tr>
-          <th>Employer Name</th>
-          <td>{{incomeValue.employerName}}</td>
-        </tr>
-        <tr>
-          <th>Salary</th>
-          <td>{{incomeValue.salary}}</td>
-        </tr>
-        <tr>
-          <th>Maximum Loan Grantable</th>
-          <td>{{loanValue.maxGrantableLoan}}</td>
-        </tr>
-        <tr>
-          <th>Rate Of Interest</th>
-          <td>{{loanValue.rateOfInterest}}</td>
-        </tr>
-        <tr>
-          <th>Tenure</th>
-          <td>{{loanValue.tenure}}</td>
-        </tr>
-        <tr>
-          <th>Loan Amount</th>
-          <td>{{loanValue.loanAmount}}</td>
-        </tr>
+  <div class="panel">
+    <div class="panel-body">
+      <div class="table-responsive" class="table" *ngIf="propertyValue">
+        <table class="table">
+          <tr>
+            <th>Application Id:</th>
+            <td>{{propertyValue.applicationid}}</td>
+          </tr>
+          <tr>
+            <th>First Name</th>
+            <td>{{personalValue.firstName}}</td>
+          </tr>
+          <tr>
+            <th>Middle Name</th>
+            <td>{{personalValue.middleName}}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{{personalValue.lastName}}</td>
+          </tr>
+          <tr>
+            <th>E-mail</th>
+            <td>{{personalValue.emailId}}</td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td>{{personalValue.phoneNumber}}</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>{{personalValue.birthDate}}</td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>{{personalValue.gender}}</td>
+          </tr>
+          <tr>
+            <th>Nationality</th>
+            <td>{{personalValue.nationality}}</td>
+          </tr>
+          <tr>
+            <th>Aadhar Number</th>
+            <td>{{personalValue.aadharNumber}}</td>
+          </tr>
+          <tr>
+            <th>PAN Number</th>
+            <td>{{personalValue.panNumber}}</td>
+          </tr>
+          <tr>
+            <th>Property Name</th>
+            <td>{{propertyValue.propertyName}}</td>
+          </tr>
+          <tr>
+            <th>Property Location</th>
+            <td>{{propertyValue.propertyLocation}}</td>
+          </tr>
+          <tr>
+            <th>Estimated Amount</th>
+            <td>{{propertyValue.estimatedAmount}}</td>
+          </tr>
+          <tr>
+            <th>Type Of Employee</th>
+            <td>{{incomeValue.typeOfEmployee}}</td>
+          </tr>
+          <tr>
+            <th>Retirement Age</th>
+            <td>{{incomeValue.retirementAge}}</td>
+          </tr>
+          <tr>
+            <th>Organization Type</th>
+            <td>{{incomeValue.organisationType}}</td>
+          </tr>
+          <tr>
+            <th>Employer Name</th>
+            <td>{{incomeValue.employerName}}</td>
+          </tr>
+          <tr>
+            <th>Salary</th>
+            <td>{{incomeValue.salary}}</td>
+          </tr>
+          <tr>
+            <th>Maximum Loan Grantable</th>
+            <td>{{loanValue.maxGrantableLoan}}</td>
+          </tr>
+          <tr>
+            <th>Rate Of Interest</th>
+            <td>{{loanValue.rateOfInterest}}</td>
+          </tr>
+          <tr>
+            <th>Tenure</th>
+            <td>{{loanValue.tenure}}</td>
+          </tr>
+          <tr>
+            <th>Loan Amount</th>
+            <td>{{loanValue.loanAmount}}</td>
+          </tr>
 
-        <tr>
-          <th>Loan Status</th>
-          <td>
-            <h5>{{loanStatus.status}}</h5>
-          </td>
-        </tr>
-
-
-
-      </table>
+          <tr>
+            <th>Loan Status</th>
+            <td>
+              <h5>{{loanStatus.status}}</h5>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- <td>{{pro.id}}</td>
-            <td>{{pro.name}}</td>
-            <td>{{pro.price | currency}}</td>
-            <td>{{pro.quantity}}</td> -->
-<!-- <tr *ngFor="let applicationDetails of propertyDetail"></tr>
-           
-          </tr> -->

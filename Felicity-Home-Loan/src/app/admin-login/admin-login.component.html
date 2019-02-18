@@ -12,6 +12,8 @@
       <input type="password" [(ngModel)]="adminLogin.adminPassword" class="form-control" id="adminPassword"
         placeholder="********" name="adminPassword" required />
     </div>
+    {{invalid}}
+    <br />
 
     <div class="form-group">
       <button class="btn btn-success" (click)="AdminLogin()">Login</button>

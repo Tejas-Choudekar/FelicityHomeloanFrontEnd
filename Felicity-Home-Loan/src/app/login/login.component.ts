@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  invalid: any;
-
+  invalid: String;
 
   constructor(private rs: LoginService, private router: Router) { }
 
@@ -25,15 +24,18 @@ export class LoginComponent implements OnInit {
     let url = 'http://localhost:8181/login/userlogin';
     this.rs.retriveFromServer(url, this.loginuser).subscribe(data => {
       this.loginuser=data['status'];
-      console.log(this.loginuser) 
+      
 
     if(this.loginuser === 'Logged in Successfully!') {
       this.router.navigate(['./homeloan-user-dashboard']);
     }
     else {
+      
+      this.invalid='User Name or Password invalid';
       localStorage.removeItem('userDetails');
+      // console.log(this.invalid);
       this.router.navigate(['./homeloan-login']);
-      this.invalid="User Name or Password invalid";
+     
     }
   
 

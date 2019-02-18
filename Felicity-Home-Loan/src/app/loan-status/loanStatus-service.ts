@@ -20,7 +20,7 @@ export class LoanStatusService{
         return this.http.post<String>(url, loanStatus);
     }
 
-    retrieveFromServer(url): Observable<LoanStatusValue>{
-        return this.http.get<LoanStatusValue>(url);
+    retrieveFromServer(url): Observable<LoanStatusValue[]>{
+        return this.http.get<LoanStatusValue[]>(url);
     }
 }

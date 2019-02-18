@@ -9,13 +9,17 @@ import { LoanStatusValue } from '../loan-status/loanStatusValue';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  status : LoanStatusValue;
-  verified: LoanStatusValue;
-  toBeVerified: LoanStatusValue;
+  status: LoanStatusValue[];
+  verified: LoanStatusValue[];
+  toBeVerified: LoanStatusValue[];
 
-  constructor(private router: Router, private loanStatus : LoanStatusService) { }
+
+  constructor(private router: Router, private loanStatus: LoanStatusService) { }
 
   ngOnInit() {
+    this.loadAllApplications();
+    this.loadPendingApplications();
+    this.loadVerifiedApplications();
   }
 
   loadAllApplications() {
@@ -23,7 +27,6 @@ export class AdminDashboardComponent implements OnInit {
     this.loanStatus.retrieveFromServer(url).subscribe(
       data => {
         this.status = data;
-        console.log(this.status);
       });
   }
 
@@ -32,7 +35,6 @@ export class AdminDashboardComponent implements OnInit {
     this.loanStatus.retrieveFromServer(url).subscribe(
       data => {
         this.verified = data;
-        console.log(this.status);
       });
   }
 
@@ -41,13 +43,12 @@ export class AdminDashboardComponent implements OnInit {
     this.loanStatus.retrieveFromServer(url).subscribe(
       data => {
         this.toBeVerified = data;
-        console.log(this.status);
       });
   }
 
 
-  logout(){
-   
-    this.router.navigate(['./homeloan-login']);
+  logout() {
+
+    this.router.navigate(['./homeloan-admin-login']);
   }
 }
