@@ -12,9 +12,5 @@ export class AdminLoginService {
   constructor(private http: HttpClient) {
 
   }
-  retriveFromServer(url, adminlogin): Observable<String> {
-
-    return this.http.post<String>(url, adminlogin);
-
-  }
+  
 }

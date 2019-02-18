@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./fileupload.component.css']
 })
 export class FileUploadComponent implements OnInit {
-  statusValue: LoanStatusValue= new LoanStatusValue();
+  statusValue: LoanStatusValue = new LoanStatusValue();
   loginuser: any;
   selectedFile: File = null;
   uploadProgress: any;
-  
+
   constructor(private http: HttpClient, private loanstatusService: LoanStatusService, private router: Router) { }
 
   ngOnInit() {
@@ -33,31 +33,26 @@ export class FileUploadComponent implements OnInit {
     this.http.post('http://localhost:8181/upload', fd, { reportProgress: true, observe: 'events' }).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress) {
         this.uploadProgress = Math.round(event.loaded / event.total * 100);
-        // console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
-        
       }
       else if (event.type === HttpEventType.Response) {
         this.uploadProgress = event;
-        //console.log(event);
       }
     });
   }
 
-  onDone(){
-    //rout to regesteration successfully page
-    //clear session
-    this.loginuser= JSON.parse(localStorage.getItem('applicationId'))['token'];
-    this.statusValue.statusId= this.loginuser;
-    this.statusValue.status="To Be Verified";
+  onDone() {
+    this.loginuser = JSON.parse(localStorage.getItem('applicationId'))['token'];
+    this.statusValue.statusId = this.loginuser;
+    this.statusValue.status = "To Be Verified";
 
-    this.loanstatusService.sendToServer(this.statusValue).subscribe(data =>{
-      
+    this.loanstatusService.sendToServer(this.statusValue).subscribe(data => {
+
       this.response = data['status'];
       console.log(this.response)
-      if(this.response === 'Loan Status added successfully!' ){
+      if (this.response === 'Loan Status added successfully!') {
         this.router.navigate(['./homeloan-application-successful']);
       }
-      else{
+      else {
         this.router.navigate(['./homeloan-home-page']);
       }
     })
